@@ -1,0 +1,97 @@
+COMMON_PATH := device/motorola/mt6835-common
+
+# A/B
+AB_OTA_UPDATER := true
+
+AB_OTA_PARTITIONS += \
+    boot \
+    dtbo \
+    init_boot \
+    odm_dlkm \
+    product \
+    system \
+    system_dlkm \
+    system_ext \
+    vbmeta \
+    vbmeta_system \
+    vbmeta_vendor \
+    vendor \
+    vendor_boot \
+    vendor_dlkm
+
+# Architecture
+TARGET_ARCH := arm64
+TARGET_ARCH_VARIANT := armv8-a
+TARGET_CPU_ABI := arm64-v8a
+TARGET_CPU_ABI2 :=
+TARGET_CPU_VARIANT := generic
+
+# Bootloader
+TARGET_NO_BOOTLOADER := true
+
+# Boot images
+BOARD_BOOT_HEADER_VERSION := 4
+BOARD_INIT_BOOT_HEADER_VERSION := 4
+
+BOARD_KERNEL_PAGESIZE := 4096
+
+BOARD_MKBOOTIMG_ARGS += \
+    --header_version $(BOARD_BOOT_HEADER_VERSION)
+
+BOARD_MKBOOTIMG_INIT_ARGS += \
+    --header_version $(BOARD_INIT_BOOT_HEADER_VERSION)
+
+BOARD_RAMDISK_USE_LZ4 := true
+
+BOARD_BOOTIMAGE_PARTITION_SIZE := 67108864
+BOARD_INIT_BOOT_IMAGE_PARTITION_SIZE := 8388608
+BOARD_VENDOR_BOOTIMAGE_PARTITION_SIZE := 67108864
+
+# DTBO
+TARGET_NEEDS_DTBOIMAGE := true
+BOARD_DTBOIMG_PARTITION_SIZE := 8388608
+
+# Dynamic partitions
+BOARD_SUPER_PARTITION_SIZE := 11811160064
+
+BOARD_SUPER_PARTITION_GROUPS := mot_dp_group
+BOARD_MOT_DP_GROUP_SIZE := 11809062912
+
+BOARD_MOT_DP_PARTITION_LIST := \
+    odm_dlkm \
+    product \
+    system \
+    system_dlkm \
+    system_ext \
+    vendor \
+    vendor_dlkm
+
+BOARD_BUILD_SUPER_IMAGE_BY_DEFAULT := true
+
+# Filesystems
+TARGET_USERIMAGES_USE_EXT4 := true
+TARGET_USERIMAGES_USE_F2FS := true
+
+BOARD_SYSTEMIMAGE_FILE_SYSTEM_TYPE := erofs
+BOARD_SYSTEM_EXTIMAGE_FILE_SYSTEM_TYPE := erofs
+BOARD_PRODUCTIMAGE_FILE_SYSTEM_TYPE := erofs
+BOARD_VENDORIMAGE_FILE_SYSTEM_TYPE := erofs
+BOARD_VENDOR_DLKMIMAGE_FILE_SYSTEM_TYPE := erofs
+BOARD_ODM_DLKMIMAGE_FILE_SYSTEM_TYPE := erofs
+BOARD_SYSTEM_DLKMIMAGE_FILE_SYSTEM_TYPE := erofs
+
+BOARD_USERDATAIMAGE_FILE_SYSTEM_TYPE := f2fs
+BOARD_METADATAIMAGE_FILE_SYSTEM_TYPE := f2fs
+
+BOARD_FLASH_BLOCK_SIZE := 262144
+
+# Verified Boot
+BOARD_AVB_ENABLE := true
+
+# Partition output paths
+TARGET_COPY_OUT_VENDOR := vendor
+TARGET_COPY_OUT_PRODUCT := product
+TARGET_COPY_OUT_SYSTEM_EXT := system_ext
+TARGET_COPY_OUT_VENDOR_DLKM := vendor_dlkm
+TARGET_COPY_OUT_ODM_DLKM := odm_dlkm
+TARGET_COPY_OUT_SYSTEM_DLKM := system_dlkm
