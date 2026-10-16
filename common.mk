@@ -10,6 +10,12 @@ PRODUCT_VIRTUAL_AB_OTA := true
 PRODUCT_SOONG_NAMESPACES += \
     $(COMMON_PATH)
 
+# HIDL (stock vendor is API 33 and still ships HIDL HALs)
+PRODUCT_PACKAGES += \
+    hwservicemanager \
+    android.hidl.allocator@1.0-service \
+    android.hidl.memory@1.0-impl
+
 # init_boot
 PRODUCT_BUILD_INIT_BOOT_IMAGE := true
 
