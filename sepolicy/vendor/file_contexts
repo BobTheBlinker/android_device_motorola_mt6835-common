@@ -1,0 +1,16 @@
+# Keymint
+/vendor/bin/hw/android\.hardware\.security\.keymint@2\.0-service\.beanpod    u:object_r:hal_keymint_default_exec:s0
+
+# Same-process HAL deps (stock copies renamed to -v33)
+/vendor/lib(64)?/libdrm-v33\.so                u:object_r:same_process_hal_file:s0
+/vendor/lib(64)?/libhidltransport-v33\.so      u:object_r:same_process_hal_file:s0
+/vendor/lib(64)?/libhwbinder-v33\.so           u:object_r:same_process_hal_file:s0
+/vendor/lib(64)?/libladder-v33\.so             u:object_r:same_process_hal_file:s0
+
+# Audio (stock service renamed to -v33)
+/vendor/bin/hw/android\.hardware\.audio\.service\.mediatek-v33    u:object_r:hal_audio_default_exec:s0
+
+# Stock HAL binaries renamed to -v33 (names taken by hardware/mediatek)
+/vendor/bin/hw/android\.hardware\.memtrack-service\.mediatek-v33  u:object_r:mtk_hal_memtrack_exec:s0
+/vendor/bin/hw/android\.hardware\.vibrator-service\.mediatek-v33  u:object_r:hal_vibrator_default_exec:s0
+/vendor/bin/wlan_assistant-v33                                    u:object_r:wlan_assistant_exec:s0

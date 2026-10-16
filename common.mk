@@ -67,3 +67,6 @@ PRODUCT_PACKAGES += \
 # Symlinks
 PRODUCT_PACKAGES += \
     mdota_symlink
+
+# Inherit the proprietary files
+$(call inherit-product, vendor/motorola/mt6835-common/mt6835-common-vendor.mk)
