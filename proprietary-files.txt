@@ -1635,6 +1635,8 @@ vendor/lib/egl/mt6835/libGLES_mali.so;SYMLINK=vendor/lib/egl/libGLES_mali.so
 vendor/lib/hw/android.hardware.audio@6.0-impl-mediatek.so
 vendor/lib/hw/android.hardware.audio@7.0-impl-mediatek.so
 vendor/lib/hw/android.hardware.audio@7.1-impl-mediatek.so
+vendor/lib/hw/android.hardware.bluetooth.audio@2.0-impl.so
+vendor/lib/hw/android.hardware.bluetooth.audio@2.1-impl.so
 vendor/lib/hw/android.hardware.bluetooth@1.1-impl-mediatek.so
 vendor/lib/hw/android.hardware.boot@1.0-impl-1.2-mtkimpl.so
 vendor/lib/hw/android.hardware.thermal@2.0-impl.so
@@ -2146,6 +2148,8 @@ vendor/lib64/egl/mt6835/libGLES_mali.so;SYMLINK=vendor/lib64/egl/libGLES_mali.so
 vendor/lib64/hw/android.hardware.audio@6.0-impl-mediatek.so
 vendor/lib64/hw/android.hardware.audio@7.0-impl-mediatek.so
 vendor/lib64/hw/android.hardware.audio@7.1-impl-mediatek.so
+vendor/lib64/hw/android.hardware.bluetooth.audio@2.0-impl.so
+vendor/lib64/hw/android.hardware.bluetooth.audio@2.1-impl.so
 vendor/lib64/hw/android.hardware.bluetooth@1.1-impl-mediatek.so
 vendor/lib64/hw/android.hardware.boot@1.0-impl-1.2-mtkimpl.so
 vendor/lib64/hw/android.hardware.gnss-impl-mediatek.so
