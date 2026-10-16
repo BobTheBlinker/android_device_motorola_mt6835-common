@@ -8,13 +8,18 @@ PRODUCT_VIRTUAL_AB_OTA := true
 
 # Soong namespaces.
 PRODUCT_SOONG_NAMESPACES += \
-    $(COMMON_PATH)
+    $(COMMON_PATH) \
+    hardware/mediatek
 
 # fastbootd
 PRODUCT_PACKAGES += \
     fastbootd \
     android.hardware.fastboot-service.example_recovery \
     android.hardware.health-service.example_recovery
+
+# Boot control (recovery and fastbootd only; normal boot keeps the stock HAL)
+PRODUCT_PACKAGES += \
+    android.hardware.boot-service.mediatek_recovery
 
 # HIDL (stock vendor is API 33 and still ships HIDL HALs)
 PRODUCT_PACKAGES += \

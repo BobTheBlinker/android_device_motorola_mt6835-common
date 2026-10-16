@@ -98,3 +98,6 @@ TARGET_BOARD_PLATFORM := mt6835
 # Recovery lives in vendor_boot
 TARGET_NO_RECOVERY := true
 BOARD_MOVE_RECOVERY_RESOURCES_TO_VENDOR_BOOT := true
+
+# SELinux
+include device/mediatek/sepolicy_vndr/SEPolicy.mk
