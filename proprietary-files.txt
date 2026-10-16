@@ -2445,7 +2445,11 @@ vendor/thh/ta/d91f322ad5a441d5955110eda3272fc0.ta
 vendor/thh/ta/e97c270ea5c44c58bcd3384a2fa2539e.ta
 vendor/thh/ta/isee_model.json
 
-# VNDK v33 libui for libcodec2_vndk-v33, which needs symbols removed in A16.
-# Taken once from prebuilts/vndk/v33 and pinned, so extraction restores it from
-# the vendor repo. (libbase-v33 comes from hardware/lineage/compat.)
+# VNDK v33 libs for blobs that need symbols removed in A16. Taken once from
+# prebuilts/vndk/v33 and pinned, so extraction restores them from the vendor
+# repo. (libbase-v33 comes from hardware/lineage/compat.)
+vendor/lib/libstagefright_bufferqueue_helper.so:vendor/lib/libstagefright_bufferqueue_helper-v33.so;FIX_SONAME|ac780166f206a5e0e340b113d3b064438dfed345|ece9be20064e02ef3c121f221807c78ddcb54bcb
+vendor/lib/libui.so:vendor/lib/libui-v33.so;FIX_SONAME|949fe7aea528795781b0090c25b1a38dac2f12bf|6952c1214ca895d3d90f60d817a88fd737e83a1e
+vendor/lib64/android.hardware.security.keymint-V2-ndk.so:vendor/lib64/android.hardware.security.keymint-V2-ndk-v33.so;FIX_SONAME|afe5e540be53ef41be9888534e8e49e2f8008359|caa6c480d136c36698b9b976c5d7a9ab0b87397b
+vendor/lib64/libstagefright_bufferqueue_helper.so:vendor/lib64/libstagefright_bufferqueue_helper-v33.so;FIX_SONAME|19737782a83e85158bc6709167268184154c7122|f96012e501ce108ac119c5c7164e047205b298c2
 vendor/lib64/libui.so:vendor/lib64/libui-v33.so;FIX_SONAME|8e373543e63905f84e95011ede729e4b24c8adec|789fc3eb6b71e697d8a06d6b544d47cf68067b3b

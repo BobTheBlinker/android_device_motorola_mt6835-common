@@ -57,7 +57,6 @@ aidl_stock_interfaces = (
     'android.hardware.radio.network-V1-ndk',
     'android.hardware.radio.sim-V1-ndk',
     'android.hardware.radio.voice-V1-ndk',
-    'android.hardware.security.keymint-V2-ndk',
     'android.hardware.security.secureclock-V1-ndk',
     'android.hardware.security.sharedsecret-V1-ndk',
     'android.hardware.usb-V1-ndk',
@@ -170,20 +169,47 @@ def blob_fixup_v33_rc():
 
 
 blob_fixups: blob_fixups_user_type = {
-    # These use libbase/libui symbols that are gone in A16
+    # These use symbols that are gone in A16
     (
         'vendor/bin/dynamicdata',
         'vendor/bin/hw/android.hardware.usb-aidl-service.mediatekv1.0',
         'vendor/lib/hw/android.hardware.boot@1.0-impl-1.2-mtkimpl.so',
         'vendor/lib/libavservices_minijail-v33.so',
+        'vendor/lib/libcodec2_hidl@1.0-v33.so',
+        'vendor/lib/libcodec2_hidl@1.1-v33.so',
+        'vendor/lib/libcodec2_hidl@1.2-v33.so',
         'vendor/lib/libnvram.so',
         'vendor/lib64/android.hardware.power-service-mediatek.so',
         'vendor/lib64/hw/android.hardware.boot@1.0-impl-1.2-mtkimpl.so',
         'vendor/lib64/libavservices_minijail-v33.so',
+        'vendor/lib64/libcodec2_hidl@1.0-v33.so',
+        'vendor/lib64/libcodec2_hidl@1.1-v33.so',
+        'vendor/lib64/libcodec2_hidl@1.2-v33.so',
         'vendor/lib64/libnvram.so',
     ): blob_fixup().replace_needed('libbase.so', 'libbase-v33.so'),
-    'vendor/lib64/libcodec2_vndk-v33.so': (
-        blob_fixup().replace_needed('libui.so', 'libui-v33.so')
+    (
+        'vendor/lib/libcodec2_hidl@1.0-v33.so',
+        'vendor/lib/libcodec2_hidl@1.1-v33.so',
+        'vendor/lib/libcodec2_hidl@1.2-v33.so',
+        'vendor/lib64/libcodec2_hidl@1.0-v33.so',
+        'vendor/lib64/libcodec2_hidl@1.1-v33.so',
+        'vendor/lib64/libcodec2_hidl@1.2-v33.so',
+    ): blob_fixup().replace_needed(
+        'libstagefright_bufferqueue_helper.so',
+        'libstagefright_bufferqueue_helper-v33.so',
+    ),
+    (
+        'vendor/lib/libcodec2_vndk-v33.so',
+        'vendor/lib/libstagefright_softomx-v33.so',
+        'vendor/lib64/libcodec2_vndk-v33.so',
+    ): blob_fixup().replace_needed('libui.so', 'libui-v33.so'),
+    (
+        'vendor/bin/hw/android.hardware.security.keymint@2.0-service.beanpod',
+        'vendor/lib64/lib_android_keymaster_keymint_utils-v33.so',
+        'vendor/lib64/libkeymint-v33.so',
+    ): blob_fixup().replace_needed(
+        'android.hardware.security.keymint-V2-ndk.so',
+        'android.hardware.security.keymint-V2-ndk-v33.so',
     ),
     (
         'vendor/bin/atcid',

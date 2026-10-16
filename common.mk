@@ -59,7 +59,7 @@ PRODUCT_PACKAGES += \
     android.hardware.common.fmq-V1-ndk.vendor \
     android.hardware.drm-V1-ndk.vendor \
     android.hardware.gnss-V2-ndk.vendor:64 \
-    android.hardware.graphics.allocator-V1-ndk.vendor:64 \
+    android.hardware.graphics.allocator-V1-ndk.vendor \
     android.hardware.graphics.common-V3-ndk.vendor \
     android.hardware.graphics.composer3-V1-ndk.vendor:64 \
     android.hardware.health-V1-ndk.vendor:64 \
@@ -75,7 +75,6 @@ PRODUCT_PACKAGES += \
     android.hardware.radio.network-V1-ndk.vendor:64 \
     android.hardware.radio.sim-V1-ndk.vendor:64 \
     android.hardware.radio.voice-V1-ndk.vendor:64 \
-    android.hardware.security.keymint-V2-ndk.vendor:64 \
     android.hardware.security.secureclock-V1-ndk.vendor:64 \
     android.hardware.security.sharedsecret-V1-ndk.vendor:64 \
     android.hardware.usb-V1-ndk.vendor:64 \
