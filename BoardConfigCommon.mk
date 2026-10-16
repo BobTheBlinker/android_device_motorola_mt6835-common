@@ -99,6 +99,16 @@ TARGET_BOARD_PLATFORM := mt6835
 TARGET_NO_RECOVERY := true
 BOARD_MOVE_RECOVERY_RESOURCES_TO_VENDOR_BOOT := true
 
+# VINTF (stock fragments whose module names are taken by AOSP)
+DEVICE_MANIFEST_FILE += \
+    $(COMMON_PATH)/configs/vintf/android.hardware.wifi.hostapd.xml \
+    $(COMMON_PATH)/configs/vintf/android.hardware.wifi.supplicant.xml \
+    $(COMMON_PATH)/configs/vintf/gnss-default.xml
+
+DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE += \
+    hardware/mediatek/vintf/mediatek_framework_compatibility_matrix.xml \
+    $(COMMON_PATH)/configs/vintf/framework_compatibility_matrix.xml
+
 # SELinux
 include device/mediatek/sepolicy_vndr/SEPolicy.mk
 BOARD_VENDOR_SEPOLICY_DIRS += $(COMMON_PATH)/sepolicy/vendor
