@@ -2444,3 +2444,8 @@ vendor/thh/ta/c1882f2d885e4e13a8c8e2622461b2fa.ta
 vendor/thh/ta/d91f322ad5a441d5955110eda3272fc0.ta
 vendor/thh/ta/e97c270ea5c44c58bcd3384a2fa2539e.ta
 vendor/thh/ta/isee_model.json
+
+# VNDK v33 libui for libcodec2_vndk-v33, which needs symbols removed in A16.
+# Taken once from prebuilts/vndk/v33 and pinned, so extraction restores it from
+# the vendor repo. (libbase-v33 comes from hardware/lineage/compat.)
+vendor/lib64/libui.so:vendor/lib64/libui-v33.so;FIX_SONAME|8e373543e63905f84e95011ede729e4b24c8adec|789fc3eb6b71e697d8a06d6b544d47cf68067b3b
