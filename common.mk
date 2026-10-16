@@ -51,6 +51,40 @@ PRODUCT_PACKAGES += \
     android.hardware.soundtrigger@2.3-impl \
     android.hardware.thermal@1.0-impl
 
+# Frozen AIDL interface libs linked by the stock blobs (see extract-files.py)
+PRODUCT_PACKAGES += \
+    android.hardware.audio.common-V1-ndk.vendor \
+    android.hardware.bluetooth.audio-V2-ndk.vendor \
+    android.hardware.common-V2-ndk.vendor \
+    android.hardware.common.fmq-V1-ndk.vendor \
+    android.hardware.drm-V1-ndk.vendor \
+    android.hardware.gnss-V2-ndk.vendor:64 \
+    android.hardware.graphics.allocator-V1-ndk.vendor:64 \
+    android.hardware.graphics.common-V3-ndk.vendor \
+    android.hardware.graphics.composer3-V1-ndk.vendor:64 \
+    android.hardware.health-V1-ndk.vendor:64 \
+    android.hardware.light-V1-ndk.vendor:64 \
+    android.hardware.light-V2-ndk.vendor:64 \
+    android.hardware.memtrack-V1-ndk.vendor:64 \
+    android.hardware.power-V3-ndk.vendor:64 \
+    android.hardware.radio-V1-ndk.vendor:64 \
+    android.hardware.radio.config-V1-ndk.vendor:64 \
+    android.hardware.radio.data-V1-ndk.vendor:64 \
+    android.hardware.radio.messaging-V1-ndk.vendor:64 \
+    android.hardware.radio.modem-V1-ndk.vendor:64 \
+    android.hardware.radio.network-V1-ndk.vendor:64 \
+    android.hardware.radio.sim-V1-ndk.vendor:64 \
+    android.hardware.radio.voice-V1-ndk.vendor:64 \
+    android.hardware.security.keymint-V2-ndk.vendor:64 \
+    android.hardware.security.secureclock-V1-ndk.vendor:64 \
+    android.hardware.security.sharedsecret-V1-ndk.vendor:64 \
+    android.hardware.usb-V1-ndk.vendor:64 \
+    android.hardware.vibrator-V2-ndk.vendor:64 \
+    android.hardware.wifi.hostapd-V1-ndk.vendor:64 \
+    android.hardware.wifi.supplicant-V1-ndk.vendor:64 \
+    android.media.audio.common.types-V1-cpp.vendor \
+    android.system.keystore2-V1-ndk.vendor:64
+
 # vndbinder (stock vendor still uses /dev/vndbinder)
 PRODUCT_PACKAGES += \
     vndservicemanager

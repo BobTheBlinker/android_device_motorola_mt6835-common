@@ -23,20 +23,6 @@ import re
 namespace_imports = []
 
 
-def vndk_v33_libs():
-    # Provided at runtime by the com.android.vndk.v33 APEX
-    configs = path.join(
-        path.dirname(path.realpath(__file__)),
-        '../../../prebuilts/vndk/v33/arm64/configs',
-    )
-    libs = set()
-    for name in ('vndkcore.libraries.33.txt', 'vndksp.libraries.txt'):
-        with open(path.join(configs, name)) as f:
-            libs.update(line.strip().removesuffix('.so') for line in f)
-    libs.discard('')
-    return libs
-
-
 def lib_fixup_vendor_suffix(lib: str, partition: str, *args, **kwargs):
     return f'{lib}_{partition}' if partition == 'vendor' else None
 
@@ -45,8 +31,47 @@ def lib_fixup_hardware_mediatek(lib: str, *args, **kwargs):
     return f'//hardware/mediatek:{lib}'
 
 
+# Frozen AIDL interface libs linked by the stock blobs. They are installed
+# from common.mk instead of as prebuilt deps: Soong rejects a dependency graph
+# that mixes them with the newer versions the A16 vendor libs use.
+aidl_stock_interfaces = (
+    'android.hardware.audio.common-V1-ndk',
+    'android.hardware.bluetooth.audio-V2-ndk',
+    'android.hardware.common-V2-ndk',
+    'android.hardware.common.fmq-V1-ndk',
+    'android.hardware.drm-V1-ndk',
+    'android.hardware.gnss-V2-ndk',
+    'android.hardware.graphics.allocator-V1-ndk',
+    'android.hardware.graphics.common-V3-ndk',
+    'android.hardware.graphics.composer3-V1-ndk',
+    'android.hardware.health-V1-ndk',
+    'android.hardware.light-V1-ndk',
+    'android.hardware.light-V2-ndk',
+    'android.hardware.memtrack-V1-ndk',
+    'android.hardware.power-V3-ndk',
+    'android.hardware.radio-V1-ndk',
+    'android.hardware.radio.config-V1-ndk',
+    'android.hardware.radio.data-V1-ndk',
+    'android.hardware.radio.messaging-V1-ndk',
+    'android.hardware.radio.modem-V1-ndk',
+    'android.hardware.radio.network-V1-ndk',
+    'android.hardware.radio.sim-V1-ndk',
+    'android.hardware.radio.voice-V1-ndk',
+    'android.hardware.security.keymint-V2-ndk',
+    'android.hardware.security.secureclock-V1-ndk',
+    'android.hardware.security.sharedsecret-V1-ndk',
+    'android.hardware.usb-V1-ndk',
+    'android.hardware.vibrator-V2-ndk',
+    'android.hardware.wifi.hostapd-V1-ndk',
+    'android.hardware.wifi.supplicant-V1-ndk',
+    'android.media.audio.common.types-V1-cpp',
+    'android.system.keystore2-V1-ndk',
+)
+
+
 lib_fixups: lib_fixups_user_type = {
     **lib_fixups,
+    aidl_stock_interfaces: lib_fixup_remove,
     (
         'libarmnn',
         'libmtkperf_client_vendor',
@@ -62,20 +87,6 @@ lib_fixups: lib_fixups_user_type = {
         'vendor.mediatek.hardware.mtkpower@1.2',
     ): lib_fixup_hardware_mediatek,
 }
-
-lib_fixups_covered = {
-    lib
-    for key in lib_fixups
-    for lib in (key if isinstance(key, tuple) else (key,))
-}
-
-lib_fixups.update(
-    {
-        lib: lib_fixup_remove
-        for lib in vndk_v33_libs()
-        if lib not in lib_fixups_covered
-    }
-)
 
 # Stock copies of libs that AOSP also builds for vendor, kept as -v33
 v33_libs = (
