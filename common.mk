@@ -10,6 +10,12 @@ PRODUCT_VIRTUAL_AB_OTA := true
 PRODUCT_SOONG_NAMESPACES += \
     $(COMMON_PATH)
 
+# fastbootd
+PRODUCT_PACKAGES += \
+    fastbootd \
+    android.hardware.fastboot-service.example_recovery \
+    android.hardware.health-service.example_recovery
+
 # HIDL (stock vendor is API 33 and still ships HIDL HALs)
 PRODUCT_PACKAGES += \
     hwservicemanager \
