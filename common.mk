@@ -34,3 +34,36 @@ PRODUCT_BUILD_INIT_BOOT_IMAGE := true
 # until source-kernel integration.
 PRODUCT_SOURCE_ROOT_DIRS += \
     -kernel/motorola/mt6835
+
+# AOSP HALs built from source (replacing the stock copies)
+PRODUCT_PACKAGES += \
+    android.hardware.drm-service.clearkey \
+    android.hardware.gatekeeper@1.0-service \
+    android.hardware.health-service.example \
+    android.hardware.sensors-service.multihal
+
+# AOSP passthrough HAL implementations (loaded by the stock HAL services)
+PRODUCT_PACKAGES += \
+    android.hardware.audio.effect@6.0-impl \
+    android.hardware.audio.effect@7.0-impl \
+    android.hardware.bluetooth.audio@2.0-impl \
+    android.hardware.bluetooth.audio@2.1-impl \
+    android.hardware.gatekeeper@1.0-impl \
+    android.hardware.renderscript@1.0-impl \
+    android.hardware.soundtrigger@2.3-impl \
+    android.hardware.thermal@1.0-impl
+
+# vndbinder (stock vendor still uses /dev/vndbinder)
+PRODUCT_PACKAGES += \
+    vndservicemanager
+
+# Vendor tools
+PRODUCT_PACKAGES += \
+    awk_vendor \
+    chipinfo \
+    dumpsys_vendor \
+    vndservice
+
+# Symlinks
+PRODUCT_PACKAGES += \
+    mdota_symlink
