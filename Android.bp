@@ -1,0 +1,42 @@
+//
+// SPDX-FileCopyrightText: The LineageOS Project
+// SPDX-License-Identifier: Apache-2.0
+//
+
+install_symlink {
+    name: "mt6835_mdota_symlink",
+    vendor: true,
+    installed_location: "etc/mdota",
+    symlink_target: "/mnt/vendor/mdota",
+}
+
+// Stock vendor boringssl self tests. The source build would install an A16
+// libcrypto into /vendor; the stock ones use the VNDK v33 APEX copy.
+cc_prebuilt_binary {
+    name: "boringssl_self_test_vendor",
+    prefer: true,
+    vendor: true,
+    stem: "boringssl_self_test",
+    compile_multilib: "both",
+    multilib: {
+        lib32: {
+            suffix: "32",
+        },
+        lib64: {
+            suffix: "64",
+        },
+    },
+    arch: {
+        arm: {
+            srcs: ["//vendor/motorola/mt6835-common:mt6835_boringssl_self_test32"],
+        },
+        arm64: {
+            srcs: ["//vendor/motorola/mt6835-common:mt6835_boringssl_self_test64"],
+        },
+    },
+    check_elf_files: false,
+    stl: "none",
+    strip: {
+        none: true,
+    },
+}

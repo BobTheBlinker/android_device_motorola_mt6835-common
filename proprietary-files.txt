@@ -3,15 +3,20 @@
 # bin
 vendor/bin/atcid
 vendor/bin/audiocmdservice_atci
+vendor/bin/awk;MODULE=awk_vendor
 vendor/bin/bip_ap
+vendor/bin/boringssl_self_test32;EXTRACT_ONLY;FILEGROUP=mt6835_boringssl_self_test32
+vendor/bin/boringssl_self_test64;EXTRACT_ONLY;FILEGROUP=mt6835_boringssl_self_test64
 vendor/bin/bp_id_attestation
 vendor/bin/bp_kmsetkey_ca
 vendor/bin/bt_dump
 vendor/bin/ccci_fsd
 vendor/bin/ccci_mdinit
 vendor/bin/ccci_rpcd
+vendor/bin/chipinfo
 vendor/bin/conninfra_loader
 vendor/bin/dmc_core
+vendor/bin/dumpsys;MODULE=dumpsys_vendor
 vendor/bin/dynamicdata
 vendor/bin/eara_io_service
 vendor/bin/factory
@@ -27,6 +32,7 @@ vendor/bin/init.insmod.sh
 vendor/bin/init_thh
 vendor/bin/ipsec_mon
 vendor/bin/lbs_hidl_service
+vendor/bin/logwrapper;MODULE=logwrapper_vendor
 vendor/bin/make_f2fs_vendor
 vendor/bin/meta_tst
 vendor/bin/mnld
@@ -42,14 +48,19 @@ vendor/bin/nvram_daemon
 vendor/bin/rcs_volte_stack
 vendor/bin/rcs_volte_stack64
 vendor/bin/setsarcal.sh
+vendor/bin/sh;MODULE=sh_vendor
 vendor/bin/stp_dump3
 vendor/bin/teei_daemon
 vendor/bin/thermal_core
 vendor/bin/thermal_intf
+vendor/bin/toolbox;MODULE=toolbox_vendor;SYMLINK=vendor/bin/getevent,vendor/bin/getprop,vendor/bin/modprobe,vendor/bin/setprop,vendor/bin/start,vendor/bin/stop
 vendor/bin/touch_boost
+vendor/bin/toybox_vendor;SYMLINK=vendor/bin/acpi,vendor/bin/base64,vendor/bin/basename,vendor/bin/blockdev,vendor/bin/cal,vendor/bin/cat,vendor/bin/chattr,vendor/bin/chcon,vendor/bin/chgrp,vendor/bin/chmod,vendor/bin/chown,vendor/bin/chroot,vendor/bin/chrt,vendor/bin/cksum,vendor/bin/clear,vendor/bin/cmp,vendor/bin/comm,vendor/bin/cp,vendor/bin/cpio,vendor/bin/cut,vendor/bin/date,vendor/bin/dd,vendor/bin/devmem,vendor/bin/df,vendor/bin/diff,vendor/bin/dirname,vendor/bin/dmesg,vendor/bin/dos2unix,vendor/bin/du,vendor/bin/echo,vendor/bin/egrep,vendor/bin/env,vendor/bin/expand,vendor/bin/expr,vendor/bin/fallocate,vendor/bin/false,vendor/bin/fgrep,vendor/bin/file,vendor/bin/find,vendor/bin/flock,vendor/bin/fmt,vendor/bin/free,vendor/bin/fsync,vendor/bin/getconf,vendor/bin/getenforce,vendor/bin/grep,vendor/bin/groups,vendor/bin/gunzip,vendor/bin/gzip,vendor/bin/head,vendor/bin/hostname,vendor/bin/hwclock,vendor/bin/i2cdetect,vendor/bin/i2cdump,vendor/bin/i2cget,vendor/bin/i2cset,vendor/bin/iconv,vendor/bin/id,vendor/bin/ifconfig,vendor/bin/inotifyd,vendor/bin/insmod,vendor/bin/install,vendor/bin/ionice,vendor/bin/iorenice,vendor/bin/kill,vendor/bin/killall,vendor/bin/ln,vendor/bin/load_policy,vendor/bin/log,vendor/bin/logname,vendor/bin/losetup,vendor/bin/ls,vendor/bin/lsattr,vendor/bin/lsmod,vendor/bin/lsof,vendor/bin/lspci,vendor/bin/lsusb,vendor/bin/md5sum,vendor/bin/microcom,vendor/bin/mkdir,vendor/bin/mkfifo,vendor/bin/mknod,vendor/bin/mkswap,vendor/bin/mktemp,vendor/bin/modinfo,vendor/bin/more,vendor/bin/mount,vendor/bin/mountpoint,vendor/bin/mv,vendor/bin/nc,vendor/bin/netcat,vendor/bin/netstat,vendor/bin/nice,vendor/bin/nl,vendor/bin/nohup,vendor/bin/nproc,vendor/bin/nsenter,vendor/bin/od,vendor/bin/paste,vendor/bin/patch,vendor/bin/pgrep,vendor/bin/pidof,vendor/bin/pkill,vendor/bin/pmap,vendor/bin/printenv,vendor/bin/printf,vendor/bin/ps,vendor/bin/pwd,vendor/bin/readelf,vendor/bin/readlink,vendor/bin/realpath,vendor/bin/renice,vendor/bin/restorecon,vendor/bin/rm,vendor/bin/rmdir,vendor/bin/rmmod,vendor/bin/rtcwake,vendor/bin/runcon,vendor/bin/sed,vendor/bin/sendevent,vendor/bin/seq,vendor/bin/setenforce,vendor/bin/setsid,vendor/bin/sha1sum,vendor/bin/sha224sum,vendor/bin/sha256sum,vendor/bin/sha384sum,vendor/bin/sha512sum,vendor/bin/sleep,vendor/bin/sort,vendor/bin/split,vendor/bin/stat,vendor/bin/strings,vendor/bin/stty,vendor/bin/swapoff,vendor/bin/swapon,vendor/bin/sync,vendor/bin/sysctl,vendor/bin/tac,vendor/bin/tail,vendor/bin/tar,vendor/bin/taskset,vendor/bin/tee,vendor/bin/test,vendor/bin/time,vendor/bin/timeout,vendor/bin/top,vendor/bin/touch,vendor/bin/tr,vendor/bin/true,vendor/bin/truncate,vendor/bin/tty,vendor/bin/uclampset,vendor/bin/ulimit,vendor/bin/umount,vendor/bin/uname,vendor/bin/uniq,vendor/bin/unix2dos,vendor/bin/unlink,vendor/bin/unshare,vendor/bin/uptime,vendor/bin/usleep,vendor/bin/uudecode,vendor/bin/uuencode,vendor/bin/uuidgen,vendor/bin/vmstat,vendor/bin/watch,vendor/bin/wc,vendor/bin/which,vendor/bin/whoami,vendor/bin/xargs,vendor/bin/xxd,vendor/bin/yes,vendor/bin/zcat
 vendor/bin/uart_launcher
 vendor/bin/ufs-utils
 vendor/bin/vendor_mke2fs
+vendor/bin/vndservice
+vendor/bin/vndservicemanager
 vendor/bin/volte_clientapi_ua
 vendor/bin/volte_rcs_ua
 vendor/bin/volte_rcs_ua64
@@ -64,12 +75,15 @@ vendor/bin/wpa_cli
 vendor/bin/hw/android.hardware.audio.service.mediatek:vendor/bin/hw/android.hardware.audio.service.mediatek-v33
 vendor/bin/hw/android.hardware.bluetooth@1.1-service-mediatek
 vendor/bin/hw/android.hardware.boot@1.2-service
+vendor/bin/hw/android.hardware.drm-service.clearkey
 vendor/bin/hw/android.hardware.drm-service.widevine
+vendor/bin/hw/android.hardware.gatekeeper@1.0-service
 vendor/bin/hw/android.hardware.gnss-service.mediatek
 vendor/bin/hw/android.hardware.graphics.composer@2.1-service
 vendor/bin/hw/android.hardware.graphics.composer@2.3-service
 vendor/bin/hw/android.hardware.graphics.composer@2.4-service
 vendor/bin/hw/android.hardware.graphics.composer@3.1-service
+vendor/bin/hw/android.hardware.health-service.example
 vendor/bin/hw/android.hardware.lights-service.mediatek
 vendor/bin/hw/android.hardware.media.c2@1.2-mediatek
 vendor/bin/hw/android.hardware.media.c2@1.2-mediatek-64b
@@ -79,6 +93,7 @@ vendor/bin/hw/android.hardware.neuralnetworks-shim-service-mtk
 vendor/bin/hw/android.hardware.neuralnetworks-shim-service-mtk-lazy
 vendor/bin/hw/android.hardware.secure_element@1.2-service-mediatek
 vendor/bin/hw/android.hardware.security.keymint@2.0-service.beanpod
+vendor/bin/hw/android.hardware.sensors-service.multihal
 vendor/bin/hw/android.hardware.thermal@2.0-service.mtk
 vendor/bin/hw/android.hardware.usb-aidl-service.mediatekv1.0
 vendor/bin/hw/android.hardware.usb.gadget-service.mediatekv1.1
@@ -205,7 +220,9 @@ vendor/etc/gralloc/vpu.xml
 vendor/etc/init/android.hardware.audio.service.mediatek.rc:vendor/etc/init/android.hardware.audio.service.mediatek-v33.rc
 vendor/etc/init/android.hardware.bluetooth@1.1-service-mediatek.rc
 vendor/etc/init/android.hardware.boot@1.2-service.rc:vendor/etc/init/android.hardware.boot@1.2-service-v33.rc
+vendor/etc/init/android.hardware.drm-service.clearkey.rc:vendor/etc/init/android.hardware.drm-service.clearkey-v33.rc
 vendor/etc/init/android.hardware.drm-service.widevine.rc
+vendor/etc/init/android.hardware.gatekeeper@1.0-service.rc:vendor/etc/init/android.hardware.gatekeeper@1.0-service-v33.rc
 vendor/etc/init/android.hardware.gnss-service.mediatek.rc
 vendor/etc/init/android.hardware.graphics.allocator@4.0-service-mediatek.rc
 vendor/etc/init/android.hardware.graphics.composer@2.1-service.rc:vendor/etc/init/android.hardware.graphics.composer@2.1-service-v33.rc
@@ -213,11 +230,13 @@ vendor/etc/init/android.hardware.graphics.composer@2.2-service.rc:vendor/etc/ini
 vendor/etc/init/android.hardware.graphics.composer@2.3-service.rc:vendor/etc/init/android.hardware.graphics.composer@2.3-service-v33.rc
 vendor/etc/init/android.hardware.graphics.composer@2.4-service.rc:vendor/etc/init/android.hardware.graphics.composer@2.4-service-v33.rc
 vendor/etc/init/android.hardware.graphics.composer@3.1-service.rc
+vendor/etc/init/android.hardware.health-service.example.rc:vendor/etc/init/android.hardware.health-service.example-v33.rc
 vendor/etc/init/android.hardware.media.c2@1.2-mediatek-64b.rc
 vendor/etc/init/android.hardware.media.omx@1.0-service.rc:vendor/etc/init/android.hardware.media.omx@1.0-service-v33.rc
 vendor/etc/init/android.hardware.neuralnetworks-shim-service-mtk.rc
 vendor/etc/init/android.hardware.secure_element@1.2-service-mediatek.rc
 vendor/etc/init/android.hardware.security.keymint-service.beanpod.rc
+vendor/etc/init/android.hardware.sensors-service-multihal.rc:vendor/etc/init/android.hardware.sensors-service-multihal-v33.rc
 vendor/etc/init/android.hardware.thermal@2.0-service.mtk.rc
 vendor/etc/init/android.hardware.usb-aidl-service.mediatek.rc
 vendor/etc/init/android.hardware.usb.gadget-service.mediatek.rc
@@ -226,7 +245,9 @@ vendor/etc/init/android.hardware.wifi@1.0-service-lazy.rc
 -vendor/etc/init/atcid.rc
 vendor/etc/init/audiocmdservice_atci.rc
 vendor/etc/init/bootperf.rc
+vendor/etc/init/boringssl_self_test.rc:vendor/etc/init/boringssl_self_test-v33.rc
 vendor/etc/init/camerahalserver.rc
+vendor/etc/init/chipinfo_init.rc
 -vendor/etc/init/dmc_core.rc
 vendor/etc/init/dynamicdata.rc
 vendor/etc/init/eara-io-service.rc
@@ -281,6 +302,7 @@ vendor/etc/init/vendor.mediatek.hardware.nvram@1.1-sevice.rc
 vendor/etc/init/vendor.mediatek.hardware.pq_aidl-service.rc
 vendor/etc/init/vendor.microtrust.hardware.thh@2.0-service.rc
 vendor/etc/init/vibrator-mtk-default.rc
+vendor/etc/init/vndservicemanager.rc:vendor/etc/init/vndservicemanager-v33.rc
 vendor/etc/init/volte_clientapi_ua.rc
 vendor/etc/init/wlan_assistant.rc:vendor/etc/init/wlan_assistant-v33.rc
 
@@ -1253,10 +1275,13 @@ vendor/etc/tp_sfnr/IQParam.bin
 
 # etc/vintf
 vendor/etc/vintf/manifest/android.hardware.boot@1.2.xml:vendor/etc/vintf/manifest/android.hardware.boot@1.2-v33.xml
+vendor/etc/vintf/manifest/android.hardware.drm-service.clearkey.xml:vendor/etc/vintf/manifest/android.hardware.drm-service.clearkey-v33.xml
+vendor/etc/vintf/manifest/android.hardware.health-service.example.xml:vendor/etc/vintf/manifest/android.hardware.health-service.example-v33.xml
 vendor/etc/vintf/manifest/android.hardware.neuralnetworks-shim-service-mtk.xml
 vendor/etc/vintf/manifest/android.hardware.security.keymint-service.beanpod.xml
 vendor/etc/vintf/manifest/android.hardware.security.secureclock-service.beanpod.xml
 vendor/etc/vintf/manifest/android.hardware.security.sharedsecret-service.beanpod.xml
+vendor/etc/vintf/manifest/android.hardware.sensors-multihal.xml:vendor/etc/vintf/manifest/android.hardware.sensors-multihal-v33.xml
 vendor/etc/vintf/manifest/android.hardware.usb-aidl-service.mediatek.xml
 vendor/etc/vintf/manifest/android.hardware.usb.gadget-service.mediatek.xml
 vendor/etc/vintf/manifest/android.hardware.wifi@1.0-service.xml
@@ -1307,7 +1332,56 @@ vendor/firmware/txpowerctrl.cfg
 vendor/firmware/wifi.cfg
 
 # lib
+vendor/lib/android.frameworks.cameraservice.common@2.0.so:vendor/lib/android.frameworks.cameraservice.common@2.0-v33.so;FIX_SONAME
+vendor/lib/android.frameworks.cameraservice.device@2.0.so:vendor/lib/android.frameworks.cameraservice.device@2.0-v33.so;FIX_SONAME
+vendor/lib/android.frameworks.cameraservice.device@2.1.so:vendor/lib/android.frameworks.cameraservice.device@2.1-v33.so;FIX_SONAME
+vendor/lib/android.frameworks.cameraservice.service@2.0.so:vendor/lib/android.frameworks.cameraservice.service@2.0-v33.so;FIX_SONAME
+vendor/lib/android.frameworks.cameraservice.service@2.1.so:vendor/lib/android.frameworks.cameraservice.service@2.1-v33.so;FIX_SONAME
+vendor/lib/android.frameworks.cameraservice.service@2.2.so:vendor/lib/android.frameworks.cameraservice.service@2.2-v33.so;FIX_SONAME
+vendor/lib/android.frameworks.sensorservice@1.0.so:vendor/lib/android.frameworks.sensorservice@1.0-v33.so;FIX_SONAME
 vendor/lib/android.hardware.audio.common-util.so:vendor/lib/android.hardware.audio.common-util-v33.so;FIX_SONAME
+vendor/lib/android.hardware.audio.common@5.0.so:vendor/lib/android.hardware.audio.common@5.0-v33.so;FIX_SONAME
+vendor/lib/android.hardware.audio.common@6.0-util.so:vendor/lib/android.hardware.audio.common@6.0-util-v33.so;FIX_SONAME
+vendor/lib/android.hardware.audio.common@6.0.so:vendor/lib/android.hardware.audio.common@6.0-v33.so;FIX_SONAME
+vendor/lib/android.hardware.audio.common@7.0-enums.so:vendor/lib/android.hardware.audio.common@7.0-enums-v33.so;FIX_SONAME
+vendor/lib/android.hardware.audio.common@7.0-util.so:vendor/lib/android.hardware.audio.common@7.0-util-v33.so;FIX_SONAME
+vendor/lib/android.hardware.audio.common@7.0.so:vendor/lib/android.hardware.audio.common@7.0-v33.so;FIX_SONAME
+vendor/lib/android.hardware.audio.common@7.1-enums.so:vendor/lib/android.hardware.audio.common@7.1-enums-v33.so;FIX_SONAME
+vendor/lib/android.hardware.audio.common@7.1-util.so:vendor/lib/android.hardware.audio.common@7.1-util-v33.so;FIX_SONAME
+vendor/lib/android.hardware.audio.effect@6.0-util.so:vendor/lib/android.hardware.audio.effect@6.0-util-v33.so;FIX_SONAME
+vendor/lib/android.hardware.audio.effect@6.0.so:vendor/lib/android.hardware.audio.effect@6.0-v33.so;FIX_SONAME
+vendor/lib/android.hardware.audio.effect@7.0-util.so:vendor/lib/android.hardware.audio.effect@7.0-util-v33.so;FIX_SONAME
+vendor/lib/android.hardware.audio.effect@7.0.so:vendor/lib/android.hardware.audio.effect@7.0-v33.so;FIX_SONAME
+vendor/lib/android.hardware.audio@6.0.so:vendor/lib/android.hardware.audio@6.0-v33.so;FIX_SONAME
+vendor/lib/android.hardware.audio@7.0-util.so:vendor/lib/android.hardware.audio@7.0-util-v33.so;FIX_SONAME
+vendor/lib/android.hardware.audio@7.0.so:vendor/lib/android.hardware.audio@7.0-v33.so;FIX_SONAME
+vendor/lib/android.hardware.audio@7.1-util.so:vendor/lib/android.hardware.audio@7.1-util-v33.so;FIX_SONAME
+vendor/lib/android.hardware.audio@7.1.so:vendor/lib/android.hardware.audio@7.1-v33.so;FIX_SONAME
+vendor/lib/android.hardware.bluetooth.audio@2.0.so:vendor/lib/android.hardware.bluetooth.audio@2.0-v33.so;FIX_SONAME
+vendor/lib/android.hardware.bluetooth.audio@2.1.so:vendor/lib/android.hardware.bluetooth.audio@2.1-v33.so;FIX_SONAME
+vendor/lib/android.hardware.bluetooth@1.0.so:vendor/lib/android.hardware.bluetooth@1.0-v33.so;FIX_SONAME
+vendor/lib/android.hardware.bluetooth@1.1.so:vendor/lib/android.hardware.bluetooth@1.1-v33.so;FIX_SONAME
+vendor/lib/android.hardware.boot@1.0.so:vendor/lib/android.hardware.boot@1.0-v33.so;FIX_SONAME
+vendor/lib/android.hardware.boot@1.1.so:vendor/lib/android.hardware.boot@1.1-v33.so;FIX_SONAME
+vendor/lib/android.hardware.boot@1.2.so:vendor/lib/android.hardware.boot@1.2-v33.so;FIX_SONAME
+vendor/lib/android.hardware.gatekeeper@1.0.so:vendor/lib/android.hardware.gatekeeper@1.0-v33.so;FIX_SONAME
+vendor/lib/android.hardware.media.c2@1.0.so:vendor/lib/android.hardware.media.c2@1.0-v33.so;FIX_SONAME
+vendor/lib/android.hardware.media.c2@1.1.so:vendor/lib/android.hardware.media.c2@1.1-v33.so;FIX_SONAME
+vendor/lib/android.hardware.media.c2@1.2.so:vendor/lib/android.hardware.media.c2@1.2-v33.so;FIX_SONAME
+vendor/lib/android.hardware.power@1.0.so:vendor/lib/android.hardware.power@1.0-v33.so;FIX_SONAME
+vendor/lib/android.hardware.radio@1.0.so:vendor/lib/android.hardware.radio@1.0-v33.so;FIX_SONAME
+vendor/lib/android.hardware.radio@1.1.so:vendor/lib/android.hardware.radio@1.1-v33.so;FIX_SONAME
+vendor/lib/android.hardware.sensors@1.0.so:vendor/lib/android.hardware.sensors@1.0-v33.so;FIX_SONAME
+vendor/lib/android.hardware.sensors@2.0-ScopedWakelock.so:vendor/lib/android.hardware.sensors@2.0-ScopedWakelock-v33.so;FIX_SONAME
+vendor/lib/android.hardware.sensors@2.0.so:vendor/lib/android.hardware.sensors@2.0-v33.so;FIX_SONAME
+vendor/lib/android.hardware.sensors@2.1.so:vendor/lib/android.hardware.sensors@2.1-v33.so;FIX_SONAME
+vendor/lib/android.hardware.soundtrigger@2.1.so:vendor/lib/android.hardware.soundtrigger@2.1-v33.so;FIX_SONAME
+vendor/lib/android.hardware.soundtrigger@2.2.so:vendor/lib/android.hardware.soundtrigger@2.2-v33.so;FIX_SONAME
+vendor/lib/android.hardware.soundtrigger@2.3.so:vendor/lib/android.hardware.soundtrigger@2.3-v33.so;FIX_SONAME
+vendor/lib/android.hardware.thermal@1.0.so:vendor/lib/android.hardware.thermal@1.0-v33.so;FIX_SONAME
+vendor/lib/android.hardware.thermal@2.0.so:vendor/lib/android.hardware.thermal@2.0-v33.so;FIX_SONAME
+vendor/lib/android.hidl.allocator@1.0.so:vendor/lib/android.hidl.allocator@1.0-v33.so;FIX_SONAME
+vendor/lib/android.media.audio.common.types-V1-cpp.so:vendor/lib/android.media.audio.common.types-V1-cpp-v33.so;FIX_SONAME
 vendor/lib/audioclient-types-aidl-cpp.so:vendor/lib/audioclient-types-aidl-cpp-v33.so;FIX_SONAME
 vendor/lib/framework-permission-aidl-cpp.so:vendor/lib/framework-permission-aidl-cpp-v33.so;FIX_SONAME
 vendor/lib/libHEVCdec_sa.ca7.android.so
@@ -1322,6 +1396,7 @@ vendor/lib/libaal_cust.so
 vendor/lib/libaal_key.so
 vendor/lib/libaal_mtk.so
 vendor/lib/libadpcmdec_mtk.so
+vendor/lib/libaedv.so
 vendor/lib/libalacdec_mtk.so
 vendor/lib/libalsautils.so:vendor/lib/libalsautils-v33.so;FIX_SONAME
 vendor/lib/libapmonitor_vendor.so
@@ -1397,6 +1472,8 @@ vendor/lib/libdlbpreg.so
 vendor/lib/libdmshal.so
 vendor/lib/libdre.so
 vendor/lib/libdrm.so:vendor/lib/libdrm-v33.so;FIX_SONAME
+vendor/lib/libeffects.so
+vendor/lib/libeffectsconfig.so:vendor/lib/libeffectsconfig-v33.so;FIX_SONAME
 vendor/lib/libfgauge_gm30.so
 vendor/lib/libfile_op.so
 vendor/lib/libflatbuffers-cpp.so:vendor/lib/libflatbuffers-cpp-v33.so;FIX_SONAME
@@ -1492,9 +1569,14 @@ vendor/lib/libpqhdrmetaparser.so
 vendor/lib/libpqsharememory.so
 vendor/lib/libpqtuning.so
 vendor/lib/libpqxmlparser.so
+vendor/lib/libprotobuf-cpp-full-3.9.1.so:vendor/lib/libprotobuf-cpp-full-3.9.1-v33.so;FIX_SONAME
+vendor/lib/libprotobuf-cpp-lite-3.9.1.so:vendor/lib/libprotobuf-cpp-lite-3.9.1-v33.so;FIX_SONAME
 vendor/lib/librcs_interface.so
 vendor/lib/librcs_volte_core.so
+vendor/lib/libreference-ril.so
 vendor/lib/librgbwlightsensor.so
+vendor/lib/libril.so
+vendor/lib/librilutils.so
 vendor/lib/librpc.so
 vendor/lib/librt_extamp_intf.so
 vendor/lib/libruy.so:vendor/lib/libruy-v33.so;FIX_SONAME
@@ -1598,6 +1680,9 @@ vendor/lib/vendor.mediatek.hardware.mms@1.4.so
 vendor/lib/vendor.mediatek.hardware.mms@1.5.so
 vendor/lib/vendor.mediatek.hardware.mms@1.6.so
 vendor/lib/vendor.mediatek.hardware.mms@1.7.so
+vendor/lib/vendor.mediatek.hardware.mtkpower@1.0.so:vendor/lib/vendor.mediatek.hardware.mtkpower@1.0-v33.so;FIX_SONAME
+vendor/lib/vendor.mediatek.hardware.mtkpower@1.1.so:vendor/lib/vendor.mediatek.hardware.mtkpower@1.1-v33.so;FIX_SONAME
+vendor/lib/vendor.mediatek.hardware.mtkpower@1.2.so:vendor/lib/vendor.mediatek.hardware.mtkpower@1.2-v33.so;FIX_SONAME
 vendor/lib/vendor.mediatek.hardware.mtkpower_applist-V1-ndk.so
 vendor/lib/vendor.mediatek.hardware.netdagent@1.0.so
 vendor/lib/vendor.mediatek.hardware.neuropilot.agent@1.0.so
@@ -1632,6 +1717,8 @@ vendor/lib/egl/libMEOW_trace.so
 vendor/lib/egl/mt6835/libGLES_mali.so;SYMLINK=vendor/lib/egl/libGLES_mali.so
 
 # lib/hw
+vendor/lib/hw/android.hardware.audio.effect@6.0-impl.so
+vendor/lib/hw/android.hardware.audio.effect@7.0-impl.so
 vendor/lib/hw/android.hardware.audio@6.0-impl-mediatek.so
 vendor/lib/hw/android.hardware.audio@7.0-impl-mediatek.so
 vendor/lib/hw/android.hardware.audio@7.1-impl-mediatek.so
@@ -1639,8 +1726,13 @@ vendor/lib/hw/android.hardware.bluetooth.audio@2.0-impl.so
 vendor/lib/hw/android.hardware.bluetooth.audio@2.1-impl.so
 vendor/lib/hw/android.hardware.bluetooth@1.1-impl-mediatek.so
 vendor/lib/hw/android.hardware.boot@1.0-impl-1.2-mtkimpl.so
+vendor/lib/hw/android.hardware.gatekeeper@1.0-impl.so
+vendor/lib/hw/android.hardware.renderscript@1.0-impl.so
+vendor/lib/hw/android.hardware.soundtrigger@2.3-impl.so
+vendor/lib/hw/android.hardware.thermal@1.0-impl.so
 vendor/lib/hw/android.hardware.thermal@2.0-impl.so
 vendor/lib/hw/audio.bluetooth.default.so
+vendor/lib/hw/audio.primary.default.so
 vendor/lib/hw/audio.primary.mediatek.so;SYMLINK=vendor/lib/hw/audio.primary.mt6835.so
 vendor/lib/hw/audio.r_submix.default.so
 vendor/lib/hw/audio.r_submix.mediatek.so;SYMLINK=vendor/lib/hw/audio.r_submix.mt6835.so
@@ -1648,9 +1740,11 @@ vendor/lib/hw/audio.usb.default.so
 vendor/lib/hw/audio_policy.stub.so
 vendor/lib/hw/gatekeeper.beanpod.so
 vendor/lib/hw/gps.default.so
+vendor/lib/hw/gralloc.default.so
 vendor/lib/hw/id_attestation.beanpod.so
 vendor/lib/hw/kmsetkey.beanpod.so
 vendor/lib/hw/libSoftGatekeeper.so;SYMLINK=vendor/lib/hw/gatekeeper.default.so
+vendor/lib/hw/local_time.default.so
 vendor/lib/hw/mt6835/android.hardware.graphics.allocator@4.0-impl-mediatek.so;SYMLINK=vendor/lib/hw/android.hardware.graphics.allocator@4.0-impl-mediatek.so
 vendor/lib/hw/mt6835/android.hardware.graphics.mapper@4.0-impl-mediatek.so;SYMLINK=vendor/lib/hw/android.hardware.graphics.mapper@4.0-impl-mediatek.so
 vendor/lib/hw/mt6835/gralloc.common.so;SYMLINK=vendor/lib/hw/gralloc.common.so
@@ -1660,6 +1754,7 @@ vendor/lib/hw/mt6835/vendor.mediatek.hardware.pq_aidl-impl.so;SYMLINK=vendor/lib
 vendor/lib/hw/mt6835/vulkan.mali.so;SYMLINK=vendor/lib/hw/vulkan.mali.so
 vendor/lib/hw/mtkflp.default.so
 vendor/lib/hw/mtkgeofence.default.so
+vendor/lib/hw/power.default.so
 vendor/lib/hw/sensors.dynamic_sensor_hal.so
 vendor/lib/hw/sound_trigger.primary.default.so
 vendor/lib/hw/thermal_hal.so
@@ -1669,10 +1764,13 @@ vendor/lib/hw/vendor.mediatek.hardware.mms@1.7-impl.so
 vendor/lib/hw/vendor.mediatek.hardware.mtkpower@1.2-impl.so
 vendor/lib/hw/vendor.mediatek.hardware.nvram@1.1-impl.so
 vendor/lib/hw/vendor.mediatek.hardware.videotelephony@1.0-impl.so
+vendor/lib/hw/vibrator.default.so
 
 # lib/mediacas
+vendor/lib/mediacas/libclearkeycasplugin.so
 
 # lib/mediadrm
+vendor/lib/mediadrm/libdrmclearkeyplugin.so
 vendor/lib/mediadrm/libmockdrmcryptoplugin.so
 
 # lib/mt6835
@@ -1730,19 +1828,123 @@ vendor/lib/mt6835/sc820acs_sunwin_rear_mipi_raw_IdxMgr.so;SYMLINK=vendor/lib/sc8
 vendor/lib/mt6835/sc820cs_txd_front_mipi_raw_IdxMgr.so;SYMLINK=vendor/lib/sc820cs_txd_front_mipi_raw_IdxMgr.so
 
 # lib/soundfx
+vendor/lib/soundfx/libaudiopreprocessing.so
 vendor/lib/soundfx/libaudiopreprocessing_mtk.so
+vendor/lib/soundfx/libbundlewrapper.so
 vendor/lib/soundfx/libdlbvol.so
+vendor/lib/soundfx/libdownmix.so
+vendor/lib/soundfx/libdynproc.so
+vendor/lib/soundfx/libeffectproxy.so
+vendor/lib/soundfx/libhapticgenerator.so
+vendor/lib/soundfx/libldnhncr.so
+vendor/lib/soundfx/libreverbwrapper.so
 vendor/lib/soundfx/libspatializer.so
 vendor/lib/soundfx/libswdap.so
 vendor/lib/soundfx/libswgamedap.so
 vendor/lib/soundfx/libswspatializer.so
+vendor/lib/soundfx/libvisualizer.so
 
 # lib64
 vendor/lib64/APUWareApusysAidlServer.so
 vendor/lib64/APUWareUtilsServer.so
+vendor/lib64/android.frameworks.cameraservice.common@2.0.so:vendor/lib64/android.frameworks.cameraservice.common@2.0-v33.so;FIX_SONAME
+vendor/lib64/android.frameworks.cameraservice.device@2.0.so:vendor/lib64/android.frameworks.cameraservice.device@2.0-v33.so;FIX_SONAME
+vendor/lib64/android.frameworks.cameraservice.device@2.1.so:vendor/lib64/android.frameworks.cameraservice.device@2.1-v33.so;FIX_SONAME
+vendor/lib64/android.frameworks.cameraservice.service@2.0.so:vendor/lib64/android.frameworks.cameraservice.service@2.0-v33.so;FIX_SONAME
+vendor/lib64/android.frameworks.cameraservice.service@2.1.so:vendor/lib64/android.frameworks.cameraservice.service@2.1-v33.so;FIX_SONAME
+vendor/lib64/android.frameworks.cameraservice.service@2.2.so:vendor/lib64/android.frameworks.cameraservice.service@2.2-v33.so;FIX_SONAME
+vendor/lib64/android.frameworks.sensorservice@1.0.so:vendor/lib64/android.frameworks.sensorservice@1.0-v33.so;FIX_SONAME
 vendor/lib64/android.hardware.audio.common-util.so:vendor/lib64/android.hardware.audio.common-util-v33.so;FIX_SONAME
+vendor/lib64/android.hardware.audio.common@5.0.so:vendor/lib64/android.hardware.audio.common@5.0-v33.so;FIX_SONAME
+vendor/lib64/android.hardware.audio.common@6.0-util.so:vendor/lib64/android.hardware.audio.common@6.0-util-v33.so;FIX_SONAME
+vendor/lib64/android.hardware.audio.common@6.0.so:vendor/lib64/android.hardware.audio.common@6.0-v33.so;FIX_SONAME
+vendor/lib64/android.hardware.audio.common@7.0-enums.so:vendor/lib64/android.hardware.audio.common@7.0-enums-v33.so;FIX_SONAME
+vendor/lib64/android.hardware.audio.common@7.0-util.so:vendor/lib64/android.hardware.audio.common@7.0-util-v33.so;FIX_SONAME
+vendor/lib64/android.hardware.audio.common@7.0.so:vendor/lib64/android.hardware.audio.common@7.0-v33.so;FIX_SONAME
+vendor/lib64/android.hardware.audio.common@7.1-enums.so:vendor/lib64/android.hardware.audio.common@7.1-enums-v33.so;FIX_SONAME
+vendor/lib64/android.hardware.audio.common@7.1-util.so:vendor/lib64/android.hardware.audio.common@7.1-util-v33.so;FIX_SONAME
+vendor/lib64/android.hardware.audio.effect@6.0-util.so:vendor/lib64/android.hardware.audio.effect@6.0-util-v33.so;FIX_SONAME
+vendor/lib64/android.hardware.audio.effect@6.0.so:vendor/lib64/android.hardware.audio.effect@6.0-v33.so;FIX_SONAME
+vendor/lib64/android.hardware.audio.effect@7.0-util.so:vendor/lib64/android.hardware.audio.effect@7.0-util-v33.so;FIX_SONAME
+vendor/lib64/android.hardware.audio.effect@7.0.so:vendor/lib64/android.hardware.audio.effect@7.0-v33.so;FIX_SONAME
+vendor/lib64/android.hardware.audio@6.0.so:vendor/lib64/android.hardware.audio@6.0-v33.so;FIX_SONAME
+vendor/lib64/android.hardware.audio@7.0-util.so:vendor/lib64/android.hardware.audio@7.0-util-v33.so;FIX_SONAME
+vendor/lib64/android.hardware.audio@7.0.so:vendor/lib64/android.hardware.audio@7.0-v33.so;FIX_SONAME
+vendor/lib64/android.hardware.audio@7.1-util.so:vendor/lib64/android.hardware.audio@7.1-util-v33.so;FIX_SONAME
+vendor/lib64/android.hardware.audio@7.1.so:vendor/lib64/android.hardware.audio@7.1-v33.so;FIX_SONAME
 vendor/lib64/android.hardware.bluetooth.audio-impl.so
+vendor/lib64/android.hardware.bluetooth.audio@2.0.so:vendor/lib64/android.hardware.bluetooth.audio@2.0-v33.so;FIX_SONAME
+vendor/lib64/android.hardware.bluetooth.audio@2.1.so:vendor/lib64/android.hardware.bluetooth.audio@2.1-v33.so;FIX_SONAME
+vendor/lib64/android.hardware.bluetooth@1.0.so:vendor/lib64/android.hardware.bluetooth@1.0-v33.so;FIX_SONAME
+vendor/lib64/android.hardware.bluetooth@1.1.so:vendor/lib64/android.hardware.bluetooth@1.1-v33.so;FIX_SONAME
+vendor/lib64/android.hardware.boot@1.0.so:vendor/lib64/android.hardware.boot@1.0-v33.so;FIX_SONAME
+vendor/lib64/android.hardware.boot@1.1.so:vendor/lib64/android.hardware.boot@1.1-v33.so;FIX_SONAME
+vendor/lib64/android.hardware.boot@1.2.so:vendor/lib64/android.hardware.boot@1.2-v33.so;FIX_SONAME
+vendor/lib64/android.hardware.camera.common@1.0.so:vendor/lib64/android.hardware.camera.common@1.0-v33.so;FIX_SONAME
+vendor/lib64/android.hardware.camera.device@1.0.so:vendor/lib64/android.hardware.camera.device@1.0-v33.so;FIX_SONAME
+vendor/lib64/android.hardware.camera.device@3.2.so:vendor/lib64/android.hardware.camera.device@3.2-v33.so;FIX_SONAME
+vendor/lib64/android.hardware.camera.device@3.3.so:vendor/lib64/android.hardware.camera.device@3.3-v33.so;FIX_SONAME
+vendor/lib64/android.hardware.camera.device@3.4.so:vendor/lib64/android.hardware.camera.device@3.4-v33.so;FIX_SONAME
+vendor/lib64/android.hardware.camera.device@3.5.so:vendor/lib64/android.hardware.camera.device@3.5-v33.so;FIX_SONAME
+vendor/lib64/android.hardware.camera.device@3.6.so:vendor/lib64/android.hardware.camera.device@3.6-v33.so;FIX_SONAME
+vendor/lib64/android.hardware.camera.provider@2.4.so:vendor/lib64/android.hardware.camera.provider@2.4-v33.so;FIX_SONAME
+vendor/lib64/android.hardware.camera.provider@2.5.so:vendor/lib64/android.hardware.camera.provider@2.5-v33.so;FIX_SONAME
+vendor/lib64/android.hardware.camera.provider@2.6.so:vendor/lib64/android.hardware.camera.provider@2.6-v33.so;FIX_SONAME
+vendor/lib64/android.hardware.gatekeeper@1.0.so:vendor/lib64/android.hardware.gatekeeper@1.0-v33.so;FIX_SONAME
+vendor/lib64/android.hardware.gnss.measurement_corrections@1.0.so:vendor/lib64/android.hardware.gnss.measurement_corrections@1.0-v33.so;FIX_SONAME
+vendor/lib64/android.hardware.gnss.measurement_corrections@1.1.so:vendor/lib64/android.hardware.gnss.measurement_corrections@1.1-v33.so;FIX_SONAME
+vendor/lib64/android.hardware.gnss.visibility_control@1.0.so:vendor/lib64/android.hardware.gnss.visibility_control@1.0-v33.so;FIX_SONAME
+vendor/lib64/android.hardware.gnss@1.0.so:vendor/lib64/android.hardware.gnss@1.0-v33.so;FIX_SONAME
+vendor/lib64/android.hardware.gnss@1.1.so:vendor/lib64/android.hardware.gnss@1.1-v33.so;FIX_SONAME
+vendor/lib64/android.hardware.gnss@2.0.so:vendor/lib64/android.hardware.gnss@2.0-v33.so;FIX_SONAME
+vendor/lib64/android.hardware.gnss@2.1.so:vendor/lib64/android.hardware.gnss@2.1-v33.so;FIX_SONAME
+vendor/lib64/android.hardware.graphics.composer@2.1-resources.so:vendor/lib64/android.hardware.graphics.composer@2.1-resources-v33.so;FIX_SONAME
+vendor/lib64/android.hardware.graphics.composer@2.1.so:vendor/lib64/android.hardware.graphics.composer@2.1-v33.so;FIX_SONAME
+vendor/lib64/android.hardware.graphics.composer@2.2-resources.so:vendor/lib64/android.hardware.graphics.composer@2.2-resources-v33.so;FIX_SONAME
+vendor/lib64/android.hardware.graphics.composer@2.2.so:vendor/lib64/android.hardware.graphics.composer@2.2-v33.so;FIX_SONAME
+vendor/lib64/android.hardware.graphics.composer@2.3.so:vendor/lib64/android.hardware.graphics.composer@2.3-v33.so;FIX_SONAME
+vendor/lib64/android.hardware.graphics.composer@2.4.so:vendor/lib64/android.hardware.graphics.composer@2.4-v33.so;FIX_SONAME
+vendor/lib64/android.hardware.light-V1-ndk.so:vendor/lib64/android.hardware.light-V1-ndk-v33.so;FIX_SONAME
+vendor/lib64/android.hardware.light@2.0.so:vendor/lib64/android.hardware.light@2.0-v33.so;FIX_SONAME
+vendor/lib64/android.hardware.media.c2@1.0.so:vendor/lib64/android.hardware.media.c2@1.0-v33.so;FIX_SONAME
+vendor/lib64/android.hardware.media.c2@1.1.so:vendor/lib64/android.hardware.media.c2@1.1-v33.so;FIX_SONAME
+vendor/lib64/android.hardware.media.c2@1.2.so:vendor/lib64/android.hardware.media.c2@1.2-v33.so;FIX_SONAME
 vendor/lib64/android.hardware.power-service-mediatek.so
+vendor/lib64/android.hardware.power@1.0.so:vendor/lib64/android.hardware.power@1.0-v33.so;FIX_SONAME
+vendor/lib64/android.hardware.power@1.1.so:vendor/lib64/android.hardware.power@1.1-v33.so;FIX_SONAME
+vendor/lib64/android.hardware.power@1.2.so:vendor/lib64/android.hardware.power@1.2-v33.so;FIX_SONAME
+vendor/lib64/android.hardware.radio@1.0.so:vendor/lib64/android.hardware.radio@1.0-v33.so;FIX_SONAME
+vendor/lib64/android.hardware.radio@1.1.so:vendor/lib64/android.hardware.radio@1.1-v33.so;FIX_SONAME
+vendor/lib64/android.hardware.radio@1.2.so:vendor/lib64/android.hardware.radio@1.2-v33.so;FIX_SONAME
+vendor/lib64/android.hardware.secure_element@1.0.so:vendor/lib64/android.hardware.secure_element@1.0-v33.so;FIX_SONAME
+vendor/lib64/android.hardware.secure_element@1.1.so:vendor/lib64/android.hardware.secure_element@1.1-v33.so;FIX_SONAME
+vendor/lib64/android.hardware.secure_element@1.2.so:vendor/lib64/android.hardware.secure_element@1.2-v33.so;FIX_SONAME
+vendor/lib64/android.hardware.security.keymint-V1-ndk.so:vendor/lib64/android.hardware.security.keymint-V1-ndk-v33.so;FIX_SONAME
+vendor/lib64/android.hardware.sensors@1.0.so:vendor/lib64/android.hardware.sensors@1.0-v33.so;FIX_SONAME
+vendor/lib64/android.hardware.sensors@2.0-ScopedWakelock.so:vendor/lib64/android.hardware.sensors@2.0-ScopedWakelock-v33.so;FIX_SONAME
+vendor/lib64/android.hardware.sensors@2.0.so:vendor/lib64/android.hardware.sensors@2.0-v33.so;FIX_SONAME
+vendor/lib64/android.hardware.sensors@2.1.so:vendor/lib64/android.hardware.sensors@2.1-v33.so;FIX_SONAME
+vendor/lib64/android.hardware.soundtrigger@2.1.so:vendor/lib64/android.hardware.soundtrigger@2.1-v33.so;FIX_SONAME
+vendor/lib64/android.hardware.soundtrigger@2.2.so:vendor/lib64/android.hardware.soundtrigger@2.2-v33.so;FIX_SONAME
+vendor/lib64/android.hardware.soundtrigger@2.3.so:vendor/lib64/android.hardware.soundtrigger@2.3-v33.so;FIX_SONAME
+vendor/lib64/android.hardware.tetheroffload.config@1.0.so:vendor/lib64/android.hardware.tetheroffload.config@1.0-v33.so;FIX_SONAME
+vendor/lib64/android.hardware.tetheroffload.control@1.0.so:vendor/lib64/android.hardware.tetheroffload.control@1.0-v33.so;FIX_SONAME
+vendor/lib64/android.hardware.tetheroffload.control@1.1.so:vendor/lib64/android.hardware.tetheroffload.control@1.1-v33.so;FIX_SONAME
+vendor/lib64/android.hardware.thermal@1.0.so:vendor/lib64/android.hardware.thermal@1.0-v33.so;FIX_SONAME
+vendor/lib64/android.hardware.thermal@2.0.so:vendor/lib64/android.hardware.thermal@2.0-v33.so;FIX_SONAME
+vendor/lib64/android.hardware.usb.gadget@1.0.so:vendor/lib64/android.hardware.usb.gadget@1.0-v33.so;FIX_SONAME
+vendor/lib64/android.hardware.usb.gadget@1.1.so:vendor/lib64/android.hardware.usb.gadget@1.1-v33.so;FIX_SONAME
+vendor/lib64/android.hardware.wifi@1.0.so:vendor/lib64/android.hardware.wifi@1.0-v33.so;FIX_SONAME
+vendor/lib64/android.hardware.wifi@1.1.so:vendor/lib64/android.hardware.wifi@1.1-v33.so;FIX_SONAME
+vendor/lib64/android.hardware.wifi@1.2.so:vendor/lib64/android.hardware.wifi@1.2-v33.so;FIX_SONAME
+vendor/lib64/android.hardware.wifi@1.3.so:vendor/lib64/android.hardware.wifi@1.3-v33.so;FIX_SONAME
+vendor/lib64/android.hardware.wifi@1.4.so:vendor/lib64/android.hardware.wifi@1.4-v33.so;FIX_SONAME
+vendor/lib64/android.hardware.wifi@1.5.so:vendor/lib64/android.hardware.wifi@1.5-v33.so;FIX_SONAME
+vendor/lib64/android.hardware.wifi@1.6.so:vendor/lib64/android.hardware.wifi@1.6-v33.so;FIX_SONAME
+vendor/lib64/android.hidl.allocator@1.0.so:vendor/lib64/android.hidl.allocator@1.0-v33.so;FIX_SONAME
+vendor/lib64/android.media.audio.common.types-V1-cpp.so:vendor/lib64/android.media.audio.common.types-V1-cpp-v33.so;FIX_SONAME
+vendor/lib64/android.system.keystore2-V1-ndk.so:vendor/lib64/android.system.keystore2-V1-ndk-v33.so;FIX_SONAME
+vendor/lib64/android.system.wifi.keystore@1.0.so:vendor/lib64/android.system.wifi.keystore@1.0-v33.so;FIX_SONAME
 vendor/lib64/audioclient-types-aidl-cpp.so:vendor/lib64/audioclient-types-aidl-cpp-v33.so;FIX_SONAME
 vendor/lib64/framework-permission-aidl-cpp.so:vendor/lib64/framework-permission-aidl-cpp-v33.so;FIX_SONAME
 vendor/lib64/lbs_hidl_service-impl.so
@@ -1765,6 +1967,7 @@ vendor/lib64/libaal_cust.so
 vendor/lib64/libaal_key.so
 vendor/lib64/libaal_mtk.so
 vendor/lib64/libadpcmdec_mtk.so
+vendor/lib64/libaedv.so
 vendor/lib64/libalacdec_mtk.so
 vendor/lib64/libalsautils.so:vendor/lib64/libalsautils-v33.so;FIX_SONAME
 vendor/lib64/libapmonitor_vendor.so
@@ -1795,6 +1998,7 @@ vendor/lib64/libaurisysdemo.so
 vendor/lib64/libavservices_minijail.so:vendor/lib64/libavservices_minijail-v33.so;FIX_SONAME
 vendor/lib64/libawinic_mtk_aurisys.so
 vendor/lib64/libbessound_hd_mtk_vendor.so
+vendor/lib64/libbinderdebug.so:vendor/lib64/libbinderdebug-v33.so;FIX_SONAME
 vendor/lib64/libblisrc32_vendor.so
 vendor/lib64/libbluetooth_audio_session.so
 vendor/lib64/libbluetooth_audio_session_aidl.so
@@ -1857,6 +2061,8 @@ vendor/lib64/libdlbpreg.so
 vendor/lib64/libdmshal.so
 vendor/lib64/libdre.so
 vendor/lib64/libdrm.so:vendor/lib64/libdrm-v33.so;FIX_SONAME
+vendor/lib64/libeffects.so
+vendor/lib64/libeffectsconfig.so:vendor/lib64/libeffectsconfig-v33.so;FIX_SONAME
 vendor/lib64/libext2_blkid.so:vendor/lib64/libext2_blkid-v33.so;FIX_SONAME
 vendor/lib64/libext2_com_err.so:vendor/lib64/libext2_com_err-v33.so;FIX_SONAME
 vendor/lib64/libext2_e2p.so:vendor/lib64/libext2_e2p-v33.so;FIX_SONAME
@@ -1986,14 +2192,19 @@ vendor/lib64/libpqhdrmetaparser.so
 vendor/lib64/libpqsharememory.so
 vendor/lib64/libpqtuning.so
 vendor/lib64/libpqxmlparser.so
+vendor/lib64/libprotobuf-cpp-full-3.9.1.so:vendor/lib64/libprotobuf-cpp-full-3.9.1-v33.so;FIX_SONAME
+vendor/lib64/libprotobuf-cpp-lite-3.9.1.so:vendor/lib64/libprotobuf-cpp-lite-3.9.1-v33.so;FIX_SONAME
 vendor/lib64/libpuresoftkeymasterdevice.so:vendor/lib64/libpuresoftkeymasterdevice-v33.so;FIX_SONAME
 vendor/lib64/libratconfig.so
 vendor/lib64/librcs_interface.so
 vendor/lib64/librcs_volte_core.so
+vendor/lib64/libreference-ril.so
 vendor/lib64/libremosaic_wrapper.so
 vendor/lib64/libremosaiclib.so
 vendor/lib64/librgbwlightsensor.so
+vendor/lib64/libril.so
 vendor/lib64/librilfusion.so
+vendor/lib64/librilutils.so
 vendor/lib64/librpc.so
 vendor/lib64/librt_extamp_intf.so
 vendor/lib64/libruy.so:vendor/lib64/libruy-v33.so;FIX_SONAME
@@ -2093,6 +2304,9 @@ vendor/lib64/vendor.mediatek.hardware.mms@1.4.so
 vendor/lib64/vendor.mediatek.hardware.mms@1.5.so
 vendor/lib64/vendor.mediatek.hardware.mms@1.6.so
 vendor/lib64/vendor.mediatek.hardware.mms@1.7.so
+vendor/lib64/vendor.mediatek.hardware.mtkpower@1.0.so:vendor/lib64/vendor.mediatek.hardware.mtkpower@1.0-v33.so;FIX_SONAME
+vendor/lib64/vendor.mediatek.hardware.mtkpower@1.1.so:vendor/lib64/vendor.mediatek.hardware.mtkpower@1.1-v33.so;FIX_SONAME
+vendor/lib64/vendor.mediatek.hardware.mtkpower@1.2.so:vendor/lib64/vendor.mediatek.hardware.mtkpower@1.2-v33.so;FIX_SONAME
 vendor/lib64/vendor.mediatek.hardware.mtkpower_applist-V1-ndk.so
 vendor/lib64/vendor.mediatek.hardware.mtkradioex.assist-V1-ndk.so
 vendor/lib64/vendor.mediatek.hardware.mtkradioex.atci-V1-ndk.so
@@ -2145,6 +2359,8 @@ vendor/lib64/egl/libMEOW_trace.so
 vendor/lib64/egl/mt6835/libGLES_mali.so;SYMLINK=vendor/lib64/egl/libGLES_mali.so
 
 # lib64/hw
+vendor/lib64/hw/android.hardware.audio.effect@6.0-impl.so
+vendor/lib64/hw/android.hardware.audio.effect@7.0-impl.so
 vendor/lib64/hw/android.hardware.audio@6.0-impl-mediatek.so
 vendor/lib64/hw/android.hardware.audio@7.0-impl-mediatek.so
 vendor/lib64/hw/android.hardware.audio@7.1-impl-mediatek.so
@@ -2152,11 +2368,16 @@ vendor/lib64/hw/android.hardware.bluetooth.audio@2.0-impl.so
 vendor/lib64/hw/android.hardware.bluetooth.audio@2.1-impl.so
 vendor/lib64/hw/android.hardware.bluetooth@1.1-impl-mediatek.so
 vendor/lib64/hw/android.hardware.boot@1.0-impl-1.2-mtkimpl.so
+vendor/lib64/hw/android.hardware.gatekeeper@1.0-impl.so
 vendor/lib64/hw/android.hardware.gnss-impl-mediatek.so
 vendor/lib64/hw/android.hardware.gnss@2.1-impl-mediatek.so
+vendor/lib64/hw/android.hardware.renderscript@1.0-impl.so
 vendor/lib64/hw/android.hardware.sensors@2.X-subhal-mediatek.so
+vendor/lib64/hw/android.hardware.soundtrigger@2.3-impl.so
+vendor/lib64/hw/android.hardware.thermal@1.0-impl.so
 vendor/lib64/hw/android.hardware.thermal@2.0-impl.so
 vendor/lib64/hw/audio.bluetooth.default.so
+vendor/lib64/hw/audio.primary.default.so
 vendor/lib64/hw/audio.primary.mediatek.so;SYMLINK=vendor/lib64/hw/audio.primary.mt6835.so
 vendor/lib64/hw/audio.r_submix.default.so
 vendor/lib64/hw/audio.r_submix.mediatek.so;SYMLINK=vendor/lib64/hw/audio.r_submix.mt6835.so
@@ -2164,10 +2385,12 @@ vendor/lib64/hw/audio.usb.default.so
 vendor/lib64/hw/audio_policy.stub.so
 vendor/lib64/hw/gatekeeper.beanpod.so
 vendor/lib64/hw/gps.default.so
+vendor/lib64/hw/gralloc.default.so
 vendor/lib64/hw/hwcomposer.mtk_common.so
 vendor/lib64/hw/id_attestation.beanpod.so
 vendor/lib64/hw/kmsetkey.beanpod.so
 vendor/lib64/hw/libSoftGatekeeper.so;SYMLINK=vendor/lib64/hw/gatekeeper.default.so
+vendor/lib64/hw/local_time.default.so
 vendor/lib64/hw/mt6835/android.hardware.camera.provider@2.6-impl-mediatek.so;SYMLINK=vendor/lib64/hw/android.hardware.camera.provider@2.6-impl-mediatek.so
 vendor/lib64/hw/mt6835/android.hardware.graphics.allocator@4.0-impl-mediatek.so;SYMLINK=vendor/lib64/hw/android.hardware.graphics.allocator@4.0-impl-mediatek.so
 vendor/lib64/hw/mt6835/android.hardware.graphics.mapper@4.0-impl-mediatek.so;SYMLINK=vendor/lib64/hw/android.hardware.graphics.mapper@4.0-impl-mediatek.so
@@ -2182,6 +2405,7 @@ vendor/lib64/hw/mt6835/vendor.mediatek.hardware.pq_aidl-impl.so;SYMLINK=vendor/l
 vendor/lib64/hw/mt6835/vulkan.mali.so;SYMLINK=vendor/lib64/hw/vulkan.mali.so
 vendor/lib64/hw/mtkflp.default.so
 vendor/lib64/hw/mtkgeofence.default.so
+vendor/lib64/hw/power.default.so
 vendor/lib64/hw/sensors.dynamic_sensor_hal.so
 vendor/lib64/hw/sensors.mediatek.V2.0.so;SYMLINK=vendor/lib64/hw/sensors.mt6835.so
 vendor/lib64/hw/sound_trigger.primary.default.so
@@ -2192,10 +2416,13 @@ vendor/lib64/hw/vendor.mediatek.hardware.mms@1.7-impl.so
 vendor/lib64/hw/vendor.mediatek.hardware.mtkpower@1.2-impl.so
 vendor/lib64/hw/vendor.mediatek.hardware.nvram@1.1-impl.so
 vendor/lib64/hw/vendor.mediatek.hardware.videotelephony@1.0-impl.so
+vendor/lib64/hw/vibrator.default.so
 
 # lib64/mediacas
+vendor/lib64/mediacas/libclearkeycasplugin.so
 
 # lib64/mediadrm
+vendor/lib64/mediadrm/libdrmclearkeyplugin.so
 vendor/lib64/mediadrm/libmockdrmcryptoplugin.so
 
 # lib64/mt6835
@@ -2408,12 +2635,21 @@ vendor/lib64/mt6835/sc820cs_txd_front_mipi_raw_IdxMgr.so;SYMLINK=vendor/lib64/sc
 vendor/lib64/mtkcam/mt6835/libmtkcam_streaminfo_plugin-p1stt.so;SYMLINK=vendor/lib64/mtkcam/libmtkcam_streaminfo_plugin-p1stt.so
 
 # lib64/soundfx
+vendor/lib64/soundfx/libaudiopreprocessing.so
 vendor/lib64/soundfx/libaudiopreprocessing_mtk.so
+vendor/lib64/soundfx/libbundlewrapper.so
 vendor/lib64/soundfx/libdlbvol.so
+vendor/lib64/soundfx/libdownmix.so
+vendor/lib64/soundfx/libdynproc.so
+vendor/lib64/soundfx/libeffectproxy.so
+vendor/lib64/soundfx/libhapticgenerator.so
+vendor/lib64/soundfx/libldnhncr.so
+vendor/lib64/soundfx/libreverbwrapper.so
 vendor/lib64/soundfx/libspatializer.so
 vendor/lib64/soundfx/libswdap.so
 vendor/lib64/soundfx/libswgamedap.so
 vendor/lib64/soundfx/libswspatializer.so
+vendor/lib64/soundfx/libvisualizer.so
 
 # res
 vendor/res/images/lcd_test_00.png
