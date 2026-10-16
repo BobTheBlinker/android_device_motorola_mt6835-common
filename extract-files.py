@@ -33,7 +33,8 @@ def lib_fixup_hardware_mediatek(lib: str, *args, **kwargs):
 
 # Frozen AIDL interface libs linked by the stock blobs. They are installed
 # from common.mk instead of as prebuilt deps: Soong rejects a dependency graph
-# that mixes them with the newer versions the A16 vendor libs use.
+# that mixes them with the newer versions the A16 vendor libs use. Blobs that
+# link them carry DISABLE_CHECKELF, since their NEEDED no longer match.
 aidl_stock_interfaces = (
     'android.hardware.audio.common-V1-ndk',
     'android.hardware.bluetooth.audio-V2-ndk',
