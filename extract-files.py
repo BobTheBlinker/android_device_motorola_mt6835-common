@@ -212,6 +212,16 @@ blob_fixups: blob_fixups_user_type = {
         'android.hardware.security.keymint-V2-ndk-v33.so',
     ),
     (
+        'vendor/bin/hs20-osu-client',
+        'vendor/bin/hw/hostapd',
+        'vendor/bin/hw/wpa_supplicant',
+    ): blob_fixup()
+    .add_needed('libcrypto_shim.so')
+    .add_needed('libshim_crypto.so'),
+    'vendor/lib64/hw/hwcomposer.mtk_common.so': (
+        blob_fixup().add_needed('libprocessgroup_shim.so')
+    ),
+    (
         'vendor/bin/atcid',
         'vendor/bin/factory',
         'vendor/bin/hw/android.hardware.audio.service.mediatek-v33',
