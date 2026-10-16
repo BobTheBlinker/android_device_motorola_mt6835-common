@@ -109,6 +109,10 @@ DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE += \
     hardware/mediatek/vintf/mediatek_framework_compatibility_matrix.xml \
     $(COMMON_PATH)/configs/vintf/framework_compatibility_matrix.xml
 
+# The stock blobs link VNDK v33 libs that come from the VNDK APEX at
+# runtime and are not declared as prebuilt dependencies
+BUILD_BROKEN_PREBUILT_ELF_FILES := true
+
 # SELinux
 include device/mediatek/sepolicy_vndr/SEPolicy.mk
 BOARD_VENDOR_SEPOLICY_DIRS += $(COMMON_PATH)/sepolicy/vendor
