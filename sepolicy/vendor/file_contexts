@@ -27,3 +27,6 @@
 /vendor/bin/dynamicdata         u:object_r:dynamicdata_exec:s0
 /vendor/bin/vendor_mke2fs       u:object_r:vendor_e2fs_exec:s0
 /vendor/bin/make_f2fs_vendor    u:object_r:vendor_make_f2fs_exec:s0
+
+# NVRAM country
+/vendor/bin/nvram_country    u:object_r:nvram_country_exec:s0

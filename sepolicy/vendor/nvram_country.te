@@ -1,0 +1,22 @@
+type nvram_country, domain;
+type nvram_country_exec, exec_type, vendor_file_type, file_type;
+
+init_daemon_domain(nvram_country)
+
+allow nvram_country self:capability { chown fowner fsetid };
+
+allow nvram_country { block_device metadata_file mnt_vendor_file }:dir search;
+allow nvram_country gsi_metadata_file:dir r_dir_perms;
+allow nvram_country { bootdevice_block_device nvdata_device nvram_device }:blk_file rw_file_perms;
+allow nvram_country { nvram_device pro_info_device }:chr_file rw_file_perms;
+allow nvram_country kmsg_device:chr_file w_file_perms;
+
+allow nvram_country { nvdata_file nvram_data_file }:dir create_dir_perms;
+allow nvram_country { nvdata_file nvram_data_file }:file create_file_perms;
+allow nvram_country { nvdata_file nvram_data_file }:lnk_file read;
+allow nvram_country nvram_data_file:lnk_file unlink;
+
+allow nvram_country { proc_bootconfig proc_cmdline sysfs_boot_mode }:file r_file_perms;
+allow nvram_country proc_lk_env:file rw_file_perms;
+allow nvram_country sysfs:dir read;
+r_dir_file(nvram_country, sysfs_dt_firmware_android)
