@@ -1,1 +1,2 @@
 type proc_min_free_kbytes, fs_type, proc_type;
+type proc_kswapd_affinity, fs_type, proc_type;

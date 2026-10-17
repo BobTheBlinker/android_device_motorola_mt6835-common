@@ -1,0 +1,1 @@
+allow mtk_hal_power proc_kswapd_affinity:file rw_file_perms;

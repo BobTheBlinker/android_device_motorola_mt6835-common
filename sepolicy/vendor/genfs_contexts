@@ -1,2 +1,5 @@
 # VM tuning written by vendor_init (stock label)
 genfscon proc /sys/vm/min_free_kbytes    u:object_r:proc_min_free_kbytes:s0
+
+# kswapd CPU affinity, written by the MTK power HAL (stock grants all of proc)
+genfscon proc /kswapd_affinity    u:object_r:proc_kswapd_affinity:s0
