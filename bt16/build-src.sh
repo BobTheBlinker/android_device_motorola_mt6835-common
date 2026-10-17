@@ -3,7 +3,7 @@
 # SPDX-FileCopyrightText: The LineageOS Project
 # SPDX-License-Identifier: Apache-2.0
 #
-# Regenerate the -bt16 Bluetooth audio island in this directory.
+# Regenerate the bt16 Bluetooth audio island in this directory.
 #
 # The AOSP sources are built on a generic product (OUT_DIR=out-bt16): in our
 # product the module names resolve to the stock prebuilts in the vendor

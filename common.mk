@@ -8,7 +8,8 @@ PRODUCT_VIRTUAL_AB_OTA := true
 
 # Soong namespaces.
 PRODUCT_SOONG_NAMESPACES += \
-    $(COMMON_PATH)
+    $(COMMON_PATH) \
+    $(COMMON_PATH)/bt16
 
 # Bluetooth audio (AOSP provider + audio.bluetooth module, bt16 island)
 PRODUCT_PACKAGES += \

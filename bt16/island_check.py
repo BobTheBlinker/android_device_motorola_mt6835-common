@@ -3,7 +3,7 @@
 # SPDX-FileCopyrightText: The LineageOS Project
 # SPDX-License-Identifier: Apache-2.0
 #
-# Island isolation check for the -bt16 BT audio HAL.
+# Island isolation check for the bt16 BT audio HAL (b16* libs).
 #
 # Model: the built vendor image (out/.../vendor, stock parity) with the
 # island overlaid (the stock provider impl replaced by the island one),
@@ -14,11 +14,17 @@
 #     LLNDK system lib (never a stock vendor/VNDK lib), and every non-weak
 #     undefined symbol is defined in that closure. Symbols the host
 #     executable exports (bionic global group) are reported as interposition.
-# (c) each island lib: every address-valued dynamic tag (incl. the Android
-#     packed/RELR relocation tags patchelf does not know) points at the start
-#     of an ALLOC section, of the matching type for table tags.
 # (b) every other vendor ELF: its NEEDED closure never reaches an island
-#     file, and no stock ELF names a -bt16 soname anywhere.
+#     file, and no stock ELF names an island soname anywhere.
+# (c) each island lib: every address-valued dynamic tag (incl. the Android
+#     packed/RELR relocation tags) points at the start of an ALLOC section,
+#     of the matching type for table tags.
+# (d) with --src <generic vendor dir>: each island lib has the same program
+#     and section headers (llvm-readelf -lW / -SW) as its unpatched build
+#     output, and differs from it only inside .dynstr.
+# (e) each island lib: every .gnu.version_r vn_file is one of its DT_NEEDED
+#     (bionic looks the file up among the lib's children) and is an island
+#     soname or v33 LLNDK.
 #
 # The host executable is modelled with the blob_fixup applied
 # (remove_needed android.hardware.bluetooth.audio-impl.so); it dlopen()s the
@@ -30,10 +36,11 @@
 # no simulated fixup) and require them to match the island dir byte for byte.
 #
 # usage: island_check.py <island dir> <android root> <host exe rel path>
-#                        [--installed]
+#                        [--installed] [--src <generic vendor dir>]
 import filecmp
 import os
 import struct
+import subprocess
 import sys
 
 from elftools.common.exceptions import ELFError
@@ -41,7 +48,9 @@ from elftools.elf.dynamic import DynamicSection
 from elftools.elf.elffile import ELFFile
 
 ISL, ROOT, HOST = sys.argv[1:4]
-INSTALLED = sys.argv[4:5] == ['--installed']
+OPTS = sys.argv[4:]
+INSTALLED = '--installed' in OPTS
+SRC = OPTS[OPTS.index('--src') + 1] if '--src' in OPTS else None
 P = os.path.join(ROOT, 'out/target/product/sycamore_row_5G')
 V33 = os.path.join(ROOT, 'prebuilts/vndk/v33/arm64')
 V33_ARCH = {'lib64': 'arch-arm64-armv8-a', 'lib': 'arch-arm-armv8-a'}
@@ -272,8 +281,9 @@ for rel, f in sorted(fs.items()):
         reached += 1
         fail += 1
         print('   FAIL', rel, '->', ', '.join(hits))
+# the provider keeps its name: the stock service dlopen()s it on purpose
 names = [os.path.basename(f).encode() for f in island.values()
-         if '-bt16' in f or '.bt16' in f]
+         if not f.endswith('/android.hardware.bluetooth.audio-impl.so')]
 strhits = 0
 for rel, f in sorted(fs.items()):
     if rel in island or not elf_info(f):
@@ -286,7 +296,7 @@ for rel, f in sorted(fs.items()):
             fail += 1
             print('   FAIL', rel, 'contains string', n.decode())
 print(f'   stock ELFs checked: {checked}, NEEDED closures reaching island: {reached}, '
-      f'-bt16 name strings: {strhits}')
+      f'island name strings: {strhits}')
 dl = [rel for rel, f in fs.items() if rel not in island and elf_info(f)
       and b'android.hardware.bluetooth.audio-impl' in open(f, 'rb').read()]
 print('   dlopen users of the swapped provider name:', ', '.join(sorted(dl)))
@@ -333,5 +343,74 @@ for rel, f in sorted(island.items()):
                           f'{sorted(starts[val])}')
                     fail += 1
 print(f'   address tags checked: {ntags}')
+
+print('== (d) layout vs unpatched build')
+if SRC is None:
+    print('   skipped (no --src)')
+else:
+    READELF = os.path.join(
+        ROOT, 'prebuilts/clang/host/linux-x86/llvm-binutils-stable/llvm-readelf')
+    ROOT_SRC = {'audio.bluetooth.bt16.so': 'hw/audio.bluetooth.default.so',
+                'android.hardware.bluetooth.audio-impl.so':
+                    'android.hardware.bluetooth.audio-impl.so'}
+    by_new = {}
+    for sub in ('', 'hw/'):
+        d = os.path.join(SRC, 'lib64', sub)
+        for n in os.listdir(d):
+            if n.endswith('.so'):
+                by_new.setdefault('b16' + n[3:], sub + n)
+    same = 0
+    for rel, f in sorted(island.items()):
+        base = os.path.basename(f)
+        orig = os.path.join(SRC, 'lib64', ROOT_SRC.get(base) or by_new.get(base, ''))
+        if not os.path.isfile(orig):
+            print(f'   FAIL {rel}: no unpatched source found')
+            fail += 1
+            continue
+        ok = True
+        for opt in ('-lW', '-SW'):
+            a, b = (subprocess.run([READELF, opt, x], capture_output=True,
+                                   text=True, check=True).stdout
+                    for x in (orig, f))
+            if a != b:
+                print(f'   FAIL {rel}: llvm-readelf {opt} differs from {orig}')
+                ok = False
+        with open(orig, 'rb') as fh:
+            od = fh.read()
+        with open(f, 'rb') as fh:
+            nd = fh.read()
+            e = ELFFile(fh)
+            ds = e.get_section_by_name('.dynstr')
+            lo, hi = ds['sh_offset'], ds['sh_offset'] + ds['sh_size']
+        if len(od) != len(nd) or od[:lo] != nd[:lo] or od[hi:] != nd[hi:]:
+            print(f'   FAIL {rel}: bytes differ outside .dynstr')
+            ok = False
+        if ok:
+            same += 1
+        else:
+            fail += 1
+    print(f'   identical headers and bytes outside .dynstr: {same}/{len(island)}')
+print('== (e) island verneed files')
+sonames = set()
+for f in island.values():
+    with open(f, 'rb') as fh:
+        d = ELFFile(fh).get_section_by_name('.dynamic')
+        sonames |= {t.soname for t in d.iter_tags() if t.entry.d_tag == 'DT_SONAME'}
+nvn = 0
+for rel, f in sorted(island.items()):
+    with open(f, 'rb') as fh:
+        e = ELFFile(fh)
+        needed = set(elf_info(f)[0])
+        vr = e.get_section_by_name('.gnu.version_r')
+        files = [v.name for v, _ in vr.iter_versions()] if vr else []
+    for vf in files:
+        nvn += 1
+        if vf not in needed:
+            print(f'   FAIL {rel}: verneed file {vf} is not in DT_NEEDED')
+            fail += 1
+        elif vf not in sonames and vf not in LLNDK:
+            print(f'   FAIL {rel}: verneed file {vf} is neither island nor LLNDK')
+            fail += 1
+print(f'   verneed files checked: {nvn}')
 print('RESULT:', 'PASS' if not fail else f'FAIL ({fail})')
 sys.exit(1 if fail else 0)
