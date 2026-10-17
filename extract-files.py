@@ -254,7 +254,6 @@ blob_fixups: blob_fixups_user_type = {
         'vendor/bin/atcid',
         'vendor/bin/dumpsys',
         'vendor/bin/factory',
-        'vendor/bin/hw/android.hardware.audio.service.mediatek-v33',
         'vendor/bin/hw/android.hardware.bluetooth@1.1-service-mediatek',
         'vendor/bin/hw/android.hardware.boot@1.2-service',
         'vendor/bin/hw/android.hardware.drm-service.clearkey',
@@ -634,6 +633,10 @@ blob_fixups: blob_fixups_user_type = {
         'vendor/lib64/vendor.mediatek.hardware.power@1.1.so',
         'vendor/lib64/vendor.mediatek.hardware.power@2.0.so',
     ): blob_fixup_v33(),
+    # Loads the provider with dlopen() by name (no symbols bound); the NEEDED
+    # would put the bt16 provider into the v33 link group
+    'vendor/bin/hw/android.hardware.audio.service.mediatek-v33': blob_fixup_v33()
+        .remove_needed('android.hardware.bluetooth.audio-impl.so'),
     (
         'vendor/etc/init/android.hardware.audio.service.mediatek-v33.rc',
         'vendor/etc/init/init.wlan_drv.rc',
@@ -646,7 +649,6 @@ blob_fixups: blob_fixups_user_type = {
 # Stock libs that are 64-bit only while their AOSP source also builds a
 # 32-bit variant; request only the 64-bit (stock) one
 lib64_only_packages = (
-    'android.hardware.bluetooth.audio-impl',
     'libhwc2on1adapter',
     'libhwc2onfbadapter',
     'libkeystore-engine-wifi-hidl',

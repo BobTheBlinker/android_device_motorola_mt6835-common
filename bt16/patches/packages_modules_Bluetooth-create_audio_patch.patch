@@ -1,0 +1,19 @@
+diff --git a/system/audio_bluetooth_hw/audio_bluetooth_hw.cc b/system/audio_bluetooth_hw/audio_bluetooth_hw.cc
+index 15a7ddaf54..b5c7ff0aaa 100644
+--- a/system/audio_bluetooth_hw/audio_bluetooth_hw.cc
++++ b/system/audio_bluetooth_hw/audio_bluetooth_hw.cc
+@@ -99,6 +99,14 @@ static int adev_create_audio_patch(struct audio_hw_device* device, unsigned int
+                                    const struct audio_port_config* sources, unsigned int num_sinks,
+                                    const struct audio_port_config* sinks,
+                                    audio_patch_handle_t* handle) {
++  // A v33 audio HAL lays out audio_port_config without
++  // speaker_layout_channel_mask (4 bytes smaller), so only element 0 of
++  // each array can be read safely.
++  if (num_sources > 1 || num_sinks > 1) {
++    LOG(ERROR) << __func__ << ": unsupported num_sources=" << num_sources
++               << " num_sinks=" << num_sinks;
++    return -EINVAL;
++  }
+   if (device == nullptr || sources == nullptr || sinks == nullptr || handle == nullptr ||
+       num_sources != 1 || num_sinks == 0 || num_sinks > AUDIO_PATCH_PORTS_MAX) {
+     return -EINVAL;

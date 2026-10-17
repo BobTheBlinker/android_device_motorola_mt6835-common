@@ -10,6 +10,14 @@ PRODUCT_VIRTUAL_AB_OTA := true
 PRODUCT_SOONG_NAMESPACES += \
     $(COMMON_PATH)
 
+# Bluetooth audio (AOSP provider + audio.bluetooth module, bt16 island)
+PRODUCT_PACKAGES += \
+    android.hardware.bluetooth.audio-impl:64 \
+    bt16_island
+
+PRODUCT_VENDOR_PROPERTIES += \
+    ro.hardware.audio.bluetooth=bt16
+
 # fastbootd
 PRODUCT_PACKAGES += \
     fastbootd \
