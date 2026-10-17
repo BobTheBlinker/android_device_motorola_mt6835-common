@@ -1,0 +1,29 @@
+# Probes that stock denies as well and that nothing here depends on.
+
+# init.mt6835.rc copies ro.boot.fingerprint into the read-only fingerprint
+# props, which our build.prop already sets to the same value
+dontaudit vendor_init { build_bootimage_prop build_prop fingerprint_prop }:property_service set;
+
+# fsck walking /mnt/vendor mountpoints
+dontaudit fsck mnt_vendor_file:dir search;
+dontaudit fsck { nvcfg_file nvdata_file persist_data_file protect_f_data_file protect_s_data_file }:dir getattr;
+
+# Device tree and /dev/block lookups
+dontaudit fuelgauged_nvram block_device:dir search;
+dontaudit fuelgauged_nvram sysfs_dt_firmware_android:dir search;
+dontaudit fuelgauged_nvram sysfs_dt_firmware_android:file r_file_perms;
+dontaudit mtk_hal_bluetooth block_device:dir search;
+
+# Lookups of unset properties that fall into default_prop / vendor_default_prop
+dontaudit rild default_prop:file r_file_perms;
+dontaudit { audioserver bluetooth cameraserver surfaceflinger untrusted_app } vendor_default_prop:file r_file_perms;
+
+# SD card fsck reading its own block device attributes
+dontaudit fsck_untrusted sysfs_devices_block:dir r_dir_perms;
+dontaudit fsck_untrusted sysfs_devices_block:file r_file_perms;
+
+# MTK aee creating /proc/aed/generate-oops
+dontaudit proc_aed proc:filesystem associate;
+
+# Bluetooth HAL rc trigger on the VTS-only vts.native_server.on
+dontaudit vendor_init vts_status_prop:file r_file_perms;
