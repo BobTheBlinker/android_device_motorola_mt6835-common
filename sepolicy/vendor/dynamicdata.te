@@ -1,0 +1,34 @@
+type dynamicdata, domain;
+type dynamicdata_exec, exec_type, vendor_file_type, file_type;
+
+init_daemon_domain(dynamicdata)
+
+domain_auto_trans(dynamicdata, vendor_e2fs_exec, vendor_e2fs)
+domain_auto_trans(dynamicdata, vendor_make_f2fs_exec, vendor_make_f2fs)
+
+allow dynamicdata self:capability sys_admin;
+
+allow dynamicdata block_device:dir { add_name search write };
+allow dynamicdata block_device:lnk_file { create unlink };
+allow dynamicdata cache_block_device:blk_file getattr;
+allow dynamicdata dm_device:blk_file rw_file_perms;
+allow dynamicdata dm_device:chr_file rw_file_perms;
+allow dynamicdata userdata_block_device:blk_file rw_file_perms;
+allowxperm dynamicdata userdata_block_device:blk_file ioctl { BLKROGET BLKDISCARD BLKPBSZGET BLKDISCARDZEROES BLKSECDISCARD };
+
+allow dynamicdata devpts:chr_file rw_file_perms;
+allow dynamicdata kmsg_device:chr_file rw_file_perms;
+allow dynamicdata metadata_file:dir search;
+allow dynamicdata gsi_metadata_file_type:dir search;
+allow dynamicdata gsi_public_metadata_file:file r_file_perms;
+allow dynamicdata proc_bootconfig:file r_file_perms;
+allow dynamicdata proc_cmdline:file r_file_perms;
+allow dynamicdata proc_swaps:file r_file_perms;
+r_dir_file(dynamicdata, sysfs_dt_firmware_android)
+r_dir_file(dynamicdata, sysfs_fs_ext4_features)
+allow dynamicdata vendor_file:file read;
+
+set_prop(dynamicdata, vendor_dynamicdata_prop)
+
+# ro.vendor.storage.dynamicdata from vendor build.prop
+set_prop(vendor_init, vendor_dynamicdata_prop)

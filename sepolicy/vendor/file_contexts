@@ -22,3 +22,8 @@
 # Dolby
 /vendor/bin/hw/vendor\.dolby\.hardware\.dms@2\.0-service       u:object_r:hal_dms_default_exec:s0
 /vendor/bin/hw/vendor\.dolby\.media\.c2-default-service-dax    u:object_r:mediacodec_exec:s0
+
+# Dynamic userdata
+/vendor/bin/dynamicdata         u:object_r:dynamicdata_exec:s0
+/vendor/bin/vendor_mke2fs       u:object_r:vendor_e2fs_exec:s0
+/vendor/bin/make_f2fs_vendor    u:object_r:vendor_make_f2fs_exec:s0
