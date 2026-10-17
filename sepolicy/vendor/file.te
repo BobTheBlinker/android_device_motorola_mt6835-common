@@ -1,0 +1,1 @@
+type proc_min_free_kbytes, fs_type, proc_type;
