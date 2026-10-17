@@ -1,0 +1,5 @@
+r_dir_file(mtk_hal_camera, sysfs_therm)
+
+# Denied on stock too; the camera works without them.
+dontaudit mtk_hal_camera { config_prop default_prop }:file r_file_perms;
+dontaudit mtk_hal_camera vendor_default_prop:property_service set;
