@@ -27,3 +27,6 @@ dontaudit proc_aed proc:filesystem associate;
 
 # Bluetooth HAL rc trigger on the VTS-only vts.native_server.on
 dontaudit vendor_init vts_status_prop:file r_file_perms;
+
+# MTK camera libs in cameraserver probing the secure dma heaps
+dontaudit cameraserver dmabuf_system_secure_heap_device:chr_file r_file_perms;
