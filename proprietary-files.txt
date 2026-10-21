@@ -1798,7 +1798,7 @@ vendor/lib/mt6835/libgpudataproducer.so;SYMLINK=vendor/lib/libgpudataproducer.so
 vendor/lib/mt6835/liblibarm_mali_config_sysprops.so;SYMLINK=vendor/lib/liblibarm_mali_config_sysprops.so
 vendor/lib/mt6835/libmmagent.so;SYMLINK=vendor/lib/libmmagent.so
 vendor/lib/mt6835/libmmlpqImpl.so;SYMLINK=vendor/lib/libmmlpqImpl.so
-vendor/lib/mt6835/libmnl.so;SYMLINK=vendor/lib/libmnl.so
+vendor/lib/mt6835/libmnl.so:vendor/lib/libmnl_mtk.so;FIX_SONAME
 vendor/lib/mt6835/libmtk_drvb.so;SYMLINK=vendor/lib/libmtk_drvb.so
 vendor/lib/mt6835/libmtkcam.atmseventmgr.so;SYMLINK=vendor/lib/libmtkcam.atmseventmgr.so
 vendor/lib/mt6835/libmtkcam.eventcallback.so;SYMLINK=vendor/lib/libmtkcam.eventcallback.so
@@ -2540,7 +2540,7 @@ vendor/lib64/mt6835/liblibarm_mali_config_sysprops.so;SYMLINK=vendor/lib64/libli
 vendor/lib64/mt6835/liblpcnr.so;SYMLINK=vendor/lib64/liblpcnr.so
 vendor/lib64/mt6835/libmmagent.so;SYMLINK=vendor/lib64/libmmagent.so
 vendor/lib64/mt6835/libmmlpqImpl.so;SYMLINK=vendor/lib64/libmmlpqImpl.so
-vendor/lib64/mt6835/libmnl.so;SYMLINK=vendor/lib64/libmnl.so
+vendor/lib64/mt6835/libmnl.so:vendor/lib64/libmnl_mtk.so;FIX_SONAME
 vendor/lib64/mt6835/libmsnr.so;SYMLINK=vendor/lib64/libmsnr.so
 vendor/lib64/mt6835/libmtk_drvb.so;SYMLINK=vendor/lib64/libmtk_drvb.so
 vendor/lib64/mt6835/libmtkcam.atmseventmgr.so;SYMLINK=vendor/lib64/libmtkcam.atmseventmgr.so

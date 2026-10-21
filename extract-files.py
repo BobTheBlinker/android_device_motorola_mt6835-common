@@ -283,7 +283,6 @@ blob_fixups: blob_fixups_user_type = {
         'vendor/bin/lbs_hidl_service',
         'vendor/bin/make_f2fs_vendor',
         'vendor/bin/meta_tst',
-        'vendor/bin/mnld',
         'vendor/bin/vendor_mke2fs',
         'vendor/bin/volte_clientapi_ua',
         'vendor/bin/volte_rcs_ua',
@@ -638,6 +637,9 @@ blob_fixups: blob_fixups_user_type = {
     # would put the bt16 provider into the v33 link group
     'vendor/bin/hw/android.hardware.audio.service.mediatek-v33': blob_fixup_v33()
         .remove_needed('android.hardware.bluetooth.audio-impl.so'),
+    # MediaTek GPS lib, renamed off AOSP external/libmnl (netlink)
+    'vendor/bin/mnld': blob_fixup_v33()
+        .replace_needed('libmnl.so', 'libmnl_mtk.so'),
     (
         'vendor/etc/init/android.hardware.audio.service.mediatek-v33.rc',
         'vendor/etc/init/init.wlan_drv.rc',
