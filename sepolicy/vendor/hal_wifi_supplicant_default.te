@@ -1,0 +1,3 @@
+# Stock wpa_supplicant starts as root and drops to wifi itself; A17 platform
+# policy no longer grants this (until_board_api(202604) removed)
+allow hal_wifi_supplicant_default self:capability { setuid setgid };
