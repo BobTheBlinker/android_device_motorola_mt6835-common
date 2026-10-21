@@ -1,0 +1,45 @@
+//
+// SPDX-FileCopyrightText: 2022 The Android Open Source Project
+// SPDX-FileCopyrightText: The LineageOS Project
+// SPDX-License-Identifier: Apache-2.0
+//
+
+// Recovery variant of hardware/mediatek aidl/boot @ 8c15a9a (that namespace is not exported here).
+// Local changes: UFS only (no eMMC fallback), bionic uapi headers, unused label dropped.
+
+package {
+    default_applicable_licenses: ["Android-Apache-2.0"],
+}
+
+cc_binary {
+    name: "android.hardware.boot-service.mediatek_recovery",
+    relative_install_path: "hw",
+    defaults: ["libboot_control_defaults"],
+    srcs: [
+        "main.cpp",
+        "BootControl.cpp",
+        "MtkBootRegionControl.cpp",
+        "ufs-bsg.cpp",
+    ],
+    init_rc: ["android.hardware.boot-service.mediatek_recovery.rc"],
+    vintf_fragment_modules: ["android.hardware.boot-service.mediatek.xml.recovery"],
+    recovery: true,
+
+    shared_libs: [
+        "libbase",
+        "libbinder_ndk",
+        "android.hardware.boot@1.1",
+        "android.hardware.boot-V1-ndk",
+    ],
+    static_libs: [
+        "libboot_control",
+    ],
+    // Bionic's uapi linux/bsg.h + scsi/scsi_bsg_ufs.h; the GKI device_kernel_headers
+    // redefine sched_param against bionic.
+}
+
+vintf_fragment {
+    name: "android.hardware.boot-service.mediatek.xml.recovery",
+    src: "android.hardware.boot-service.mediatek.xml",
+    recovery: true,
+}
