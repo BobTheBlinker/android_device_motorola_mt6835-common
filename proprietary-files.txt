@@ -1089,7 +1089,6 @@ vendor/etc/permissions/android.hardware.sensor.stepcounter.prebuilt.xml:vendor/e
 vendor/etc/permissions/android.hardware.sensor.stepdetector.prebuilt.xml:vendor/etc/permissions/android.hardware.sensor.stepdetector-v33.prebuilt.xml
 vendor/etc/permissions/android.hardware.telephony.gsm.xml
 vendor/etc/permissions/android.hardware.telephony.ims.prebuilt.xml:vendor/etc/permissions/android.hardware.telephony.ims-v33.prebuilt.xml
-vendor/etc/permissions/android.hardware.touchscreen.multitouch.distinct.prebuilt.xml
 vendor/etc/permissions/android.hardware.touchscreen.multitouch.jazzhand.prebuilt.xml
 vendor/etc/permissions/android.hardware.touchscreen.multitouch.prebuilt.xml
 vendor/etc/permissions/android.hardware.touchscreen.prebuilt.xml

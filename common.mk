@@ -31,6 +31,10 @@ PRODUCT_PACKAGES += \
     android.hidl.allocator@1.0-service \
     android.hidl.memory@1.0-impl
 
+# Permissions (AOSP module, byte-identical to the stock file)
+PRODUCT_PACKAGES += \
+    android.hardware.touchscreen.multitouch.distinct.prebuilt.xml
+
 # init_boot
 PRODUCT_BUILD_INIT_BOOT_IMAGE := true
 
