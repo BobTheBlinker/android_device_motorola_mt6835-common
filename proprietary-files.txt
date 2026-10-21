@@ -1475,7 +1475,7 @@ vendor/lib/libeffectsconfig.so:vendor/lib/libeffectsconfig-v33.so;FIX_SONAME
 vendor/lib/libfgauge_gm30.so
 vendor/lib/libfile_op.so
 vendor/lib/libflatbuffers-cpp.so:vendor/lib/libflatbuffers-cpp-v33.so;FIX_SONAME
-vendor/lib/libformatter.so
+vendor/lib/libformatter.so;MODULE_SUFFIX=_vendor
 vendor/lib/libged.so
 vendor/lib/libgpu_aux.so
 vendor/lib/libgpud.so
@@ -2068,7 +2068,7 @@ vendor/lib64/libfgauge_gm30.so
 vendor/lib64/libfile_op.so
 vendor/lib64/libflatbuffers-cpp.so:vendor/lib64/libflatbuffers-cpp-v33.so;FIX_SONAME
 vendor/lib64/libforkexecwrap.so
-vendor/lib64/libformatter.so
+vendor/lib64/libformatter.so;MODULE_SUFFIX=_vendor
 vendor/lib64/libged.so
 vendor/lib64/libgpu_aux.so
 vendor/lib64/libgpud.so

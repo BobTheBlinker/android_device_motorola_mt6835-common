@@ -45,6 +45,7 @@ lib_fixups: lib_fixups_user_type = {
     **lib_fixups,
     (
         'libarmnn',
+        'libformatter',
         'libmtkperf_client_vendor',
         'libperfctl_vendor',
         'libpowerhalwrap_vendor',
