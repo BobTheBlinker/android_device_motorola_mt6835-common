@@ -22,8 +22,6 @@ dontaudit { audioserver bluetooth cameraserver surfaceflinger untrusted_app } ve
 dontaudit fsck_untrusted sysfs_devices_block:dir r_dir_perms;
 dontaudit fsck_untrusted sysfs_devices_block:file r_file_perms;
 
-# MTK aee creating /proc/aed/generate-oops
-dontaudit proc_aed proc:filesystem associate;
 
 # Bluetooth HAL rc trigger on the VTS-only vts.native_server.on
 dontaudit vendor_init vts_status_prop:file r_file_perms;
