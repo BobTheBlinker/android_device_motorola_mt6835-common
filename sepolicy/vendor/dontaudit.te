@@ -1,6 +1,6 @@
 # Probes that stock denies as well and that nothing here depends on.
 
-# init.mt6835.rc copies ro.boot.fingerprint into the read-only fingerprint
+# init.mt8755.rc copies ro.boot.fingerprint into the read-only fingerprint
 # props, which our build.prop already sets to the same value
 dontaudit vendor_init { build_bootimage_prop build_prop fingerprint_prop }:property_service set;
 
